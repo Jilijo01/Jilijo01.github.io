@@ -2,6 +2,38 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
         <h1>Space Invaders</h1>
+	<style>
+	grid {
+	width: 300px;
+	height: 300px;
+	border: solid black 1px;
+	display: flex;
+	flex-wrap: wrap;
+	}
+
+	.grid div {
+		width: 20px;
+		height: 20px;
+	}
+
+	.invader {
+		background-color: purple;
+		border-radius: 10px;
+	}
+
+	.shooter {
+		background-color: green;
+	}
+
+	.laser {
+		background-color: orange;
+	}
+
+	.boom {
+		background-color: red;
+	}
+
+	</style>
     `;
 
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
@@ -12,9 +44,9 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            const grid = document.querySelector('.grid');
+            const grid = this.querySelector('.grid');
             for (let i = 0; i < 225; i++) {
-              const square = document.createElement('div')
+              const square = this.createElement('div')
               grid.appendChild(square)
             };
 		}
