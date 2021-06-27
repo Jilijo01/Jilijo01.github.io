@@ -3,7 +3,7 @@
     tmpl.innerHTML = `
         <h1>Space Invaders</h1>
 	<style>
-	grid {
+	.grid {
 	width: 300px;
 	height: 300px;
 	border: solid black 1px;
