@@ -44,7 +44,7 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-	    let grid = this._shadowRoot.querySelector('.grid')
+	    var grid = this._shadowRoot.querySelector('.grid')
 	    for (let i = 0; i < 225; i++) {
             	var square = this._shadowRoot.querySelector('.grid');
   		grid.appendChild(square);
