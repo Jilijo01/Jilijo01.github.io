@@ -44,10 +44,10 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-	    const grid = this._querySelector('.grid')
+	    const this._grid = this._shadowRoot.querySelector('.grid')
 	    for (let i = 0; i < 225; i++) {
-  		const square = this._createElement('div')
- 		grid.appendChild(square)
+  		const this._square = this._shadowRoot.createElement('div')
+ 		this._grid.appendChild(this._square)
 		}
             		}
 
