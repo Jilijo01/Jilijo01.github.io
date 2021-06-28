@@ -46,7 +46,10 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
 	    const grid = document.querySelector('.grid');
-	    
+	    for (let i = 0; i < 225; i++) {
+	   	const square = document.createElement('div')
+	    	
+	}
             		}
 
         //Fired when the widget is added to the html DOM of the page
