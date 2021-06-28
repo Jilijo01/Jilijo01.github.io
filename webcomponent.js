@@ -44,12 +44,8 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            const grid = this._shadowRoot.querySelector('.grid');
-            for (let i = 0; i < 225; i++) {
-              const square = this._shadowRoot.createElement('div')
-              grid.appendChild(square)
-            };
-		}
+            this._shadowRoot.querySelector('.grid');
+            		}
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
