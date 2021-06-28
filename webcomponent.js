@@ -46,8 +46,8 @@
             this._firstConnection = false;
 	    const grid = this._shadowRoot.querySelector('.grid')
 	    for (let i = 0; i < 225; i++) {
-            	const square = this._shadowRoot.querySelector('.grid');
-  		grid.appendChild(square);
+  		const square = this._shadowRoot.createElement('div')
+ 		grid.appendChild(square)
 		}
             		}
 
