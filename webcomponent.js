@@ -44,9 +44,9 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            const grid = this.querySelector('.grid');
+            const grid = this._shadowRoot.querySelector('.grid');
             for (let i = 0; i < 225; i++) {
-              const square = this.createElement('div')
+              const square = this._shadowRoot.createElement('div')
               grid.appendChild(square)
             };
 		}
