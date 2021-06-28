@@ -2,6 +2,7 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
         <h1>Space Invaders</h1>
+	<div class="grid"></div>
 	<style>
 	.grid {
 	width: 300px;
@@ -46,9 +47,9 @@
             this._firstConnection = false;
 	    const grid = document.querySelector('.grid');
 	    for (let i = 0; i < 225; i++) {
-	    	const square = document.createElement('div')
-	    	this._shadowRoot.querySelector('.grid').appendChild(square)
-		}
+	   	const square = document.createElement('div')
+	    	grid.appendChild(square)
+	}
             		}
 
         //Fired when the widget is added to the html DOM of the page
