@@ -47,7 +47,7 @@
 	    const grid = document.querySelector('.grid');
 	    for (let i = 0; i < 225; i++) {
 	    	const square = document.createElement('div')
-	    	document.querySelector('.grid').appendChild(square)
+	    	this._shadowRoot.querySelector('.grid').appendChild(square)
 		}
             		}
 
