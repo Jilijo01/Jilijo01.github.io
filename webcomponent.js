@@ -11,29 +11,23 @@
 	display: flex;
 	flex-wrap: wrap;
 	}
-
 	.grid div {
 		width: 20px;
 		height: 20px;
 	}
-
 	.invader {
 		background-color: purple;
 		border-radius: 10px;
 	}
-
 	.shooter {
 		background-color: green;
 	}
-
 	.laser {
 		background-color: orange;
 	}
-
 	.boom {
 		background-color: red;
 	}
-
 	</style>
     `;
 
@@ -57,16 +51,17 @@
 	    0,1,2,3,4,5,6,7,8,9,
 	    15,16,17,18,19,20,21,22,23,24,
 	    30,31,32,33,34,35,36,37,38,39]
-            		}
-	    //function testing() {
+            		
+	    function testing() {
   		for (let i = 0; i < alienInvaders.length; i++) {
     			if(!aliensRemoved.includes(i)) {
      				 squares[alienInvaders[i]].classList.add('invader')
 			    }
 			  }
-			//}
-
-	    //testing()
+			}
+            testing()
+        }
+	    
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
             this._firstConnection = true;
