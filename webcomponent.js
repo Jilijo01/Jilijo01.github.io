@@ -45,7 +45,7 @@
 	   	const square = document.createElement('div');
 	    	this._shadowRoot.querySelector('.grid').appendChild(square);
 		}
-	    const squares = Array.from(document.querySelectorAll('.grid div'))
+	    const squares = Array.from(this._shadowRoot.querySelectorAll('.grid div'))
 
 	    let alienInvaders = [
 	    0,1,2,3,4,5,6,7,8,9,
@@ -55,7 +55,7 @@
 	    function draw() {
   		for (let i = 0; i < alienInvaders.length; i++) {
     			if(!aliensRemoved.includes(i)) {
-     				 squares.classList.add('invader')
+     				 squares[alienInvaders[i]].classList.add('invader')
 			    }
 			  }
 			}
