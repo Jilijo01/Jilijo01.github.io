@@ -36,10 +36,12 @@
 
 	    constructor() {
 		super();
-	    	this._shadowRoot = this.attachShadow({mode: "open"});
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._firstConnection = false;
-            let aliensRemoved = []
+	    this._shadowRoot = this.attachShadow({mode: "open"});
+        this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+        this._firstConnection = false;
+        
+        let aliensRemoved = []
+        let currentShooterIndex = 202
 	    const grid = document.querySelector('.grid');
 	    for (let i = 0; i < 225; i++) {
 	   	const square = document.createElement('div');
