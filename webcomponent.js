@@ -39,7 +39,7 @@
 	    	this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-	    "use strict";
+            let aliensRemoved = []
 	    const grid = document.querySelector('.grid');
 	    for (let i = 0; i < 225; i++) {
 	   	const square = document.createElement('div');
@@ -52,14 +52,14 @@
 	    15,16,17,18,19,20,21,22,23,24,
 	    30,31,32,33,34,35,36,37,38,39]
             		
-	    function testing() {
+	    function draw() {
   		for (let i = 0; i < alienInvaders.length; i++) {
     			if(!aliensRemoved.includes(i)) {
      				 squares[alienInvaders[i]].classList.add('invader')
 			    }
 			  }
 			}
-            testing()
+            draw()
         }
 	    
         //Fired when the widget is added to the html DOM of the page
