@@ -137,6 +137,7 @@
                 }
                 squares[currentShooterIndex].classList.add('shooter');
               }
+	    moveShooter();
         }
     });
 })();
