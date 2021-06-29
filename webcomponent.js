@@ -81,9 +81,9 @@
                 if (currentShooterIndex % width < width -1) currentShooterIndex +=1
                 break
             }
-            squares[currentShooterIndex].classList.add('shooter')
+            squares[currentShooterIndex].classList.add('shooter');
           }
-
+          this.addEventListener('keydown', moveShooter);
         }
 	    
         //Fired when the widget is added to the html DOM of the page
@@ -122,9 +122,10 @@
             redraw()
         }
         */
-
+        
         redraw(){
-        moveShooter();
-	}
+            var shadow = window.getSelection(this._shadowRoot);
+            this.moveShooter();   
+        }
     });
 })();
