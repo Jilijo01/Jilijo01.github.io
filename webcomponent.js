@@ -57,7 +57,7 @@
 	    15,16,17,18,19,20,21,22,23,24,
 	    30,31,32,33,34,35,36,37,38,39]
             		}
-	    function draw_SPEC() {
+	    function this._draw() {
   		for (let i = 0; i < alienInvaders.length; i++) {
     			if(!aliensRemoved.includes(i)) {
      				 squares[alienInvaders[i]].classList.add('invader')
@@ -65,7 +65,7 @@
 			  }
 			}
 
-	    draw()
+	    this._draw()
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
             this._firstConnection = true;
