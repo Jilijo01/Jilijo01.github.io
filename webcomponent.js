@@ -60,6 +60,12 @@
 			  }
 			}
             draw()
+        
+        function remove() {
+            for (let i = 0; i < alienInvaders.length; i++) {
+                squares[alienInvaders[i]].classList.remove('invader')
+            }
+            }    
         }
 	    
         //Fired when the widget is added to the html DOM of the page
