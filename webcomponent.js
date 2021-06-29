@@ -66,6 +66,9 @@
                 squares[alienInvaders[i]].classList.remove('invader')
             }
             }    
+        
+        squares[currentShooterIndex].classList.add('shooter')
+            
         }
 	    
         //Fired when the widget is added to the html DOM of the page
