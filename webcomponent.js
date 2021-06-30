@@ -133,6 +133,7 @@
             var shadow = window.getSelection(this._shadowRoot);
            	document.addEventListener('keydown', logKey);
 	function logKey(e) {
+		squares[currentShooterIndex].classList.remove('shooter');
 	                switch(e.key) {
                   case 'ArrowLeft':
                     if (currentShooterIndex % width !== 0) currentShooterIndex -=1
