@@ -84,6 +84,13 @@
             squares[currentShooterIndex].classList.add('shooter');
           }
           this.addEventListener('keydown', moveShooter);
+		    
+		document.addEventListener('keydown', logKey);
+
+		function logKey(e) {
+  		log.textContent += ` ${e.code}`;
+}	    
+		    
         }
 	    
         //Fired when the widget is added to the html DOM of the page
