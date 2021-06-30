@@ -85,7 +85,7 @@
           }
           this.addEventListener('keydown', moveShooter);
 		    
-}	    
+	    
 		    
         }
 	    
