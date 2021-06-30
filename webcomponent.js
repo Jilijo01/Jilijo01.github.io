@@ -111,23 +111,39 @@
         */
         
         redraw(){
-	let currentShooterIndex = 202
-	let width = 15
-	const squares = Array.from(this._shadowRoot.querySelectorAll('.grid div'))
+	    let currentShooterIndex = 202
+	    let width = 15
+	    const squares = Array.from(this._shadowRoot.querySelectorAll('.grid div'))
         var shadow = window.getSelection(this._shadowRoot);
         document.addEventListener('keydown', logKey);
 	    function logKey(e) {
 		    squares[currentShooterIndex].classList.remove('shooter');
-		    switch(e.key) {
-		  case 'ArrowLeft':
-		    if (currentShooterIndex % width !== 0) currentShooterIndex -=1
-		    break
-		  case 'ArrowRight' :
-		    if (currentShooterIndex % width < width -1) currentShooterIndex +=1
-		    break
+	            switch(e.key) {
+                  case 'ArrowLeft':
+                    if (currentShooterIndex % width !== 0) currentShooterIndex -=1
+                    break
+                  case 'ArrowRight' :
+                    if (currentShooterIndex % width < width -1) currentShooterIndex +=1
+                    break
                 }
                 squares[currentShooterIndex].classList.add('shooter');
               }
+
+            function draw() {
+            for (let i = 0; i < alienInvaders.length; i++) {
+                if(!aliensRemoved.includes(i)) {
+                squares[alienInvaders[i]].classList.add('invader')
+                }
+            }
+            }
+              
+            draw()
+            
+            function remove() {
+            for (let i = 0; i < alienInvaders.length; i++) {
+                squares[alienInvaders[i]].classList.remove('invader')
+            }
+            }
 	   
         }
     });
