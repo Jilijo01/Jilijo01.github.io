@@ -87,7 +87,7 @@
 		    
 		document.addEventListener('keydown', logKey);
 		function logKey(e) {
-  		log.textContent += ` ${e.code}`;
+  		console.log({e.code});
 }	    
 		    
         }
