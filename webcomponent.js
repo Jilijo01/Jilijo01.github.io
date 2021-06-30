@@ -86,7 +86,6 @@
           this.addEventListener('keydown', moveShooter);
 		    
 		document.addEventListener('keydown', logKey);
-
 		function logKey(e) {
   		log.textContent += ` ${e.code}`;
 }	    
