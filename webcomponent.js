@@ -231,9 +231,8 @@
             const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
             aliensRemoved.push(alienRemoved)
             results++
-            resultsDisplay.innerHTML = results
+            resultsDisplay.tmpl.innerHTML = results
             console.log(aliensRemoved)
-
             }
 
         }
