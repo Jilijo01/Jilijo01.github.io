@@ -129,6 +129,7 @@
         redraw(){
 	 let currentShooterIndex = 202
 	 let width = 15
+	 const squares = Array.from(this._shadowRoot.querySelectorAll('.grid div'))
             var shadow = window.getSelection(this._shadowRoot);
            	document.addEventListener('keydown', logKey);
 	function logKey(e) {
