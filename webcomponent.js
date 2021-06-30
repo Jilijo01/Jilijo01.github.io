@@ -40,37 +40,6 @@
         this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
         this._firstConnection = false;
         
-        let aliensRemoved = []
-        let currentShooterIndex = 202
-	    const grid = document.querySelector('.grid');
-	    for (let i = 0; i < 225; i++) {
-	   	const square = document.createElement('div');
-	    	this._shadowRoot.querySelector('.grid').appendChild(square);
-		}
-	    const squares = Array.from(this._shadowRoot.querySelectorAll('.grid div'))
-
-	    let alienInvaders = [
-	    0,1,2,3,4,5,6,7,8,9,
-	    15,16,17,18,19,20,21,22,23,24,
-	    30,31,32,33,34,35,36,37,38,39]
-            		
-	    function draw() {
-  		for (let i = 0; i < alienInvaders.length; i++) {
-    			if(!aliensRemoved.includes(i)) {
-     				 squares[alienInvaders[i]].classList.add('invader')
-			    }
-			  }
-			}
-            draw()
-        
-        function remove() {
-            for (let i = 0; i < alienInvaders.length; i++) {
-                squares[alienInvaders[i]].classList.remove('invader')
-            }
-            }    
-        
-        squares[currentShooterIndex].classList.add('shooter')
-       
         }
 	    
         //Fired when the widget is added to the html DOM of the page
