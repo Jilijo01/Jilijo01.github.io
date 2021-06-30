@@ -85,7 +85,6 @@
           }
           this.addEventListener('keydown', moveShooter);
 		    
-
 }	    
 		    
         }
@@ -128,15 +127,20 @@
         */
         
         redraw(){
-	document.addEventListener('keydown', logKey);
+            var shadow = window.getSelection(this._shadowRoot);
+           	document.addEventListener('keydown', logKey);
 	function logKey(e) {
-  	 switch(e.key) {
-              case 'ArrowLeft':
-                if (currentShooterIndex % width !== 0) currentShooterIndex -=1
-                break
-              case 'ArrowRight' :
-                if (currentShooterIndex % width < width -1) currentShooterIndex +=1
-                break
+	                switch(e.key) {
+                  case 'ArrowLeft':
+                    if (currentShooterIndex % width !== 0) currentShooterIndex -=1
+                    break
+                  case 'ArrowRight' :
+                    if (currentShooterIndex % width < width -1) currentShooterIndex +=1
+                    break
+                }
+                squares[currentShooterIndex].classList.add('shooter');
+              }
+	   
         }
     });
 })();
