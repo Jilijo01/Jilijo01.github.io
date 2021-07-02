@@ -2,6 +2,8 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
         <h1>Hello Its me working code</h1>
+	<script src="https://kaboomjs.com/lib/0.5.1/kaboom.js"></script>
+	<script type="module">	
     `;
 
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
