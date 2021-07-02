@@ -6,7 +6,7 @@
 	</style>
     `;
 
-    customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
+    customElements.define('com-sap-sample-mario', class HelloWorld1 extends HTMLElement {
 
 
 	    constructor() {
