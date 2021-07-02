@@ -1,7 +1,7 @@
 (function()  {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-        <h1>Hello it's me, working code</h1>
+        <h1>Hello it's me working code</h1>
     `;
 
     customElements.define('com-sap-sample-mario', class HelloWorld1 extends HTMLElement {
