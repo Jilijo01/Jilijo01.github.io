@@ -1,7 +1,9 @@
 (function()  {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-        <h1>Test</h1>
+        <h1>With Kaboom script</h1>
+	<script src="https://kaboomjs.com/lib/0.5.1/kaboom.js"></script>
+	<script type="module">
     `;
 
     customElements.define('com-sap-sample-mario', class HelloWorld1 extends HTMLElement {
