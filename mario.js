@@ -19,8 +19,8 @@
             //console.log(canvas);
             //var context = canvas.getcontext("2d");
             //context.fillRect(0,0,50,50);
-            var myCanvas = $("#screen");
-            var myCanvasContext = myCanvas[0].getContext("2d");
+            var canvas = document.querySelector('canvas');
+            var context = canvas.getContext("2d");
 
         }
 
