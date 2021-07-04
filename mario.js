@@ -3,7 +3,6 @@
     tmpl.innerHTML = `
     <head>
         <title>Super Mario</title>
-        //<script type="module" src="https://jilijo01.github.io/webcomponent.js"></script>
     </head>
     <body>
     <canvas id="screen" width="640" height="640"></script>
