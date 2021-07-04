@@ -4,7 +4,6 @@
     <h1>Super Mario</h1>
     <canvas id="screen" width="640" height="640"></canvas>
         
-
     `;
 
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
@@ -12,10 +11,12 @@
 
         constructor() {
             super();
-	    let shadowRoot = this.attachShadow({mode: "open"});
-            shadowRoot.appendChild(template.content.cloneNode(true));
-            //this.$canvas = shadowRoot.querySelector('screen');
-            //console.log(this.$canvas);
+            shadowRoot = this.attachShadow({ mode: "open" });
+            shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            firstConnection = false;
+            var canvas = shadowRoot.getElementById('screen');
+            console.log(canvas);
+            var context = canvas.getcontext("2d");
             //context.fillRect(0,0,50,50);
         }
 
