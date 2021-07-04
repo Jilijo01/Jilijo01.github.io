@@ -19,7 +19,7 @@
             //console.log(canvas);
             //var context = canvas.getcontext("2d");
             //context.fillRect(0,0,50,50);
-            var canvas = document.querySelector('canvas');
+            var canvas = document.querySelector('screen');
             var context = canvas.getContext("2d");
 
         }
