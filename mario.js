@@ -14,8 +14,8 @@
             shadowRoot = this.attachShadow({ mode: "open" });
             shadowRoot.appendChild(tmpl.content.cloneNode(true));
             firstConnection = false;
-            var canvas = shadowRoot.getElementById('screen');
-            console.log(canvas);
+            //var canvas = shadowRoot.getElementById('screen');
+            //console.log(canvas);
             //var context = canvas.getcontext("2d");
             //context.fillRect(0,0,50,50);
         }
