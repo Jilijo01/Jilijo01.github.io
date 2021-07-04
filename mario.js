@@ -15,8 +15,8 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            let canvas = this._shadowRoot.querySelector('#screen');
-            let context = canvas[0].getcontext("2d");
+            var canvas = this._shadowRoot.querySelector('#screen');
+            var context = canvas[0].getcontext("2d");
             context.fillRect(0,0,50,50);
 
         }
