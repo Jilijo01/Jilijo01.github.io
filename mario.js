@@ -16,7 +16,7 @@
             firstConnection = false;
             var canvas = shadowRoot.getElementById('screen');
             console.log(canvas);
-            var context = canvas.getcontext("2d");
+            //var context = canvas.getcontext("2d");
             //context.fillRect(0,0,50,50);
         }
 
