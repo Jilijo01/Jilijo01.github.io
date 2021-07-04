@@ -12,23 +12,8 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-	// initialize kaboom context
-	const k = kaboom();
-
-	// define a scene
-	k.scene("main", () => {
-
-    	// add a text at position (100, 100)
-    	k.add([
-        k.text("ohhimark", 32),
-        k.pos(100, 100),
-    ]);
-
-});
-
-// start the game
-k.start("main");
-		}
+			
+	}
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
