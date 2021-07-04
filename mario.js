@@ -12,9 +12,8 @@
 
         constructor() {
             super();
-            this._shadowRoot = this.attachShadow({ mode: "open" });
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._firstConnection = false;
+			let shadowRoot = this.attachShadow({mode: "open"});
+			shadowRoot.appendChild(template.content.cloneNode(true));
             this.$canvas = shadowRoot.querySelector('screen');
             console.log(this.$canvas);
             //context.fillRect(0,0,50,50);
