@@ -16,7 +16,7 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
             const canvas = this._shadowRoot.getElementById('screen');
-            function colered() {
+            function colored() {
                 canvas.fillStyle = "red";
                 canvas.fill();
 
