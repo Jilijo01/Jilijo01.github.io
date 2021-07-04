@@ -1,12 +1,8 @@
 (function()  {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-    <head>
-        <title>Super Mario</title>
-    </head>
-    <body>
+    <h1>Super Mario</h1>
     <canvas id="screen" width="640" height="640"></script>
-    </body>
         
 
     `;
