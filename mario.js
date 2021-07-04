@@ -16,8 +16,12 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
             const canvas = document.getElementById('screen');
-	    canvas.fillStyle = "red";
-	    canvas.fill();
+            function colered(){
+                canvas.fillStyle = "red";
+	            canvas.fill();
+
+            }
+	        colored();
             //const context = canvas.getContext('2d');
             //context.fillRect(0,0,50,50);
 			
