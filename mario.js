@@ -17,9 +17,9 @@
             this._firstConnection = false;
             const canvas = this._shadowRoot.getElementById('screen');
             function colored() {
-                const canv = this._shadowRoot.querySelector(#canvas);
-                canv.fillStyle = "red";
-                canv.fill();
+                //const canv = this._shadowRoot.querySelector(#canvas);
+                //canv.fillStyle = "red";
+                //canv.fill();
 
             }
             colored();
