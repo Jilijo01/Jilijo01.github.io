@@ -1,7 +1,15 @@
 (function()  {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-        <h1>Hello Its me working code</h1>
+    <head>
+        <title>Super Mario</title>
+        <script type="module" src="https://jilijo01.github.io/webcomponent.js"></script>
+    </head>
+    <body>
+    <canvas id="screen" width="640" height="640"></script>
+    </body>
+        
+
     `;
 
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
