@@ -14,7 +14,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            var canvas = this._shadowRoot.getElementById('screen').getContext('2d');
+            var context = this._shadowRoot.getElementById('screen').getContext('2d');
             function loadImage(url) {
                 return new Promise(resolve => {
                     const image = new Image();
@@ -25,6 +25,9 @@
                 });
             }
             loadImage('https://jilijo01.github.io/tiles.png');
+            .then(image => {
+                context.drawImage(0,0);
+            });
         }
 
         //Fired when the widget is added to the html DOM of the page
