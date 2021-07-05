@@ -23,7 +23,7 @@
                         resolve(image);
                     });
                     image.src = url;
-                }
+                });
             loadImage('https://jilijo01.github.io/tiles.png');
 
                 );
