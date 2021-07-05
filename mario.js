@@ -25,7 +25,7 @@
                 });
             }
             loadImage('https://jilijo01.github.io/tiles.png');
-            Promise.then(image => {
+            .then(image => {
                 context.drawImage(0,0);
             });
         }
