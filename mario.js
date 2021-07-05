@@ -16,7 +16,7 @@
             this._firstConnection = false;
             var canvas = this._shadowRoot.getElementById('screen').getContext('2d');
             console.log(canvas);
-            //var context = canvas.fillRect(0,0,50,50);
+            var context = canvas.fillRect(0,0,50,50);
             //context.fillRect(0,0,50,50);
         }
 
