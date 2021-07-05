@@ -27,7 +27,7 @@
             loadImage('"https://jilijo01.github.io/tiles.png')
 
                 )
-            }
+            ;
         }
 
         //Fired when the widget is added to the html DOM of the page
