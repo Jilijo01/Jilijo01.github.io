@@ -26,7 +26,7 @@
                 });
             loadImage('https://jilijo01.github.io/tiles.png');
 
-                );
+                
                     ;
             }
 
