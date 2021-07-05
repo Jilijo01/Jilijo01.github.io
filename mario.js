@@ -15,9 +15,19 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
             var canvas = this._shadowRoot.getElementById('screen').getContext('2d');
-            console.log(canvas);
-            var context = canvas.fillRect(0,0,50,50);
-            //context.fillRect(0,0,50,50);
+            
+            function loadImage(url){
+                return new Promise(resolve =>{
+                    const image = new Image();
+                    image.addEventListener('load', () => {
+                        resolve(image);
+                    });
+                    image.src = url
+                }
+            loadImage('"https://jilijo01.github.io/tiles.png')
+
+                )
+            }
         }
 
         //Fired when the widget is added to the html DOM of the page
