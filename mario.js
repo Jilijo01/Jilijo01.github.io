@@ -26,7 +26,7 @@
             }
             loadImage('https://jilijo01.github.io/tiles.png')
             .then(image => {
-                context.drawImage(image,0,0,16,16);
+                context.drawImage(image,0,0,16,16,0,0,16,16);
             });
         }
 
