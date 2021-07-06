@@ -24,8 +24,8 @@
                     image.src = url;
                 });
             }
-            loadImage('https://jilijo01.github.io/tiles.png');
-            then(image => {
+            loadImage('https://jilijo01.github.io/tiles.png')
+            .then(image => {
                 context.drawImage(image,0,0);
             });
         }
