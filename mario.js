@@ -38,7 +38,7 @@
                     buffer.width = this.width;
                     buffer.height = this.height;
                     buffer
-                        .context('2d')
+                        .getcontext('2d')
                         .drawImage(
                             this.image,
                             x * this.width,
