@@ -62,8 +62,8 @@
             .then(image => {
                 const sprites = new SpriteSheet(image,16,16);
                 sprites.define('ground',0, 0);
-                sprites.draw('ground', context, 45, 62);
-                context.drawImage(image,0,0,16,16,0,0,16,16);
+                sprites.draw('ground', context, 45, 62)
+                //context.drawImage(image,0,0,16,16,0,0,16,16);
             });
         }
 
