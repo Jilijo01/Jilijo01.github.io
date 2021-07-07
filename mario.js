@@ -2,7 +2,7 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     <h1>Super Mario</h1>
-    
+    <canvas id="screen" width="640" height="640"></canvas>
         
     `;
 
@@ -38,7 +38,7 @@
                     buffer.width = this.width;
                     buffer.height = this.height;
                     buffer
-                        .getcontext('2d')
+                        .getContext('2d')
                         .drawImage(
                             this.image,
                             x * this.width,
