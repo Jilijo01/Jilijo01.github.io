@@ -2,7 +2,7 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     <h1>Super Mario</h1>
-    <canvas id="screen" width="640" height="640"></canvas>
+    
         
     `;
 
