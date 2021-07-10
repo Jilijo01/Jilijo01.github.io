@@ -15,6 +15,7 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
             var context = this._shadowRoot.getElementById('screen').getContext('2d');
+            import Spritesheet from 'https://jilijo01.github.io/spritesheet.js';
             function loadImage(url) {
                 return new Promise(resolve => {
                     const image = new Image();
