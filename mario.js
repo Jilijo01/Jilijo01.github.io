@@ -63,8 +63,7 @@
                 const sprites = new SpriteSheet(image,16,16);
                 sprites.define('ground',0, 0);
                 sprites.draw('ground', context, 180, 162);
-                //context.drawImage(image,0,0,16,16,0,0,16,16);
-            });
+                });
         }
 
         //Fired when the widget is added to the html DOM of the page
