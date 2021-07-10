@@ -56,6 +56,10 @@
                     const buffer = this.tiles.get(name);
                     context.drawImage(buffer, x, y);
                 }
+
+                drawTile(name, context, x, y){
+                    this.draw(name, context, x * this.width, y * this.height);
+                }
             }
 
             loadImage('https://jilijo01.github.io/tiles.png')
@@ -64,6 +68,12 @@
                     sprites.define('ground', 0, 0);
                     sprites.define('sky', 3, 23);
                     sprites.draw('sky', context, 180, 162);
+
+                    for (let x = 0, x < 25, ++x){
+                        for (let y = 0, y < 25, ++y){
+                            sprites.drawTile('sky', context, x, y)
+                        }
+                    }
                 });
         }
 
