@@ -71,7 +71,7 @@
 
                     for (let abc = 0, abc < 25, ++abc){
                         for (let def = 0, def < 25, ++def){
-                            sprites.drawTile('sky', context, abc, def)
+                            sprites.drawTile('sky', context, x, y)
                         }
                     }
                 });
