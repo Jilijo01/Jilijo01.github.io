@@ -69,8 +69,8 @@
                     sprites.define('sky', 3, 23);
                     sprites.draw('sky', context, 180, 162);
 
-                    for (let x = 0, x < 25, ++x){
-                        for (let y = 0, y < 25, ++y){
+                    for (let xx = 0, x < 25, ++xx){
+                        for (let yy = 0, y < 25, ++yy){
                             sprites.drawTile('sky', context, x, y)
                         }
                     }
