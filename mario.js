@@ -3,7 +3,7 @@
     tmpl.innerHTML = `
     <h1>Super Mario</h1>
     <canvas id="screen" width="640" height="640"></canvas>
-    <script type="module" src="https://jilijo01.github.io/mario.js"></script>   
+    <script type="module" src="https://jilijo01.github.io/console.js"></script>   
     `;
 
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
