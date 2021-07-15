@@ -16,7 +16,7 @@
             this._firstConnection = false;
             this.newScript = document.createElement('script');
             this.newScript.setAttribute('type', 'module');
-            this.newScript.setAttribute('src', 'https://jilijo01.github.io/testt.js');
+            this.newScript.setAttribute('src', 'https://jilijo01.github.io/main.js');
             this._shadowRoot.appendChild(this.newScript);
             //"<script type="module" src="https://jilijo01.github.io/testt.js"></script>"
             /*
