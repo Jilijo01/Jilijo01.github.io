@@ -1,7 +1,14 @@
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
 import {loadImage, loadLevel} from 'https://jilijo01.github.io/loaders.js';
-const context = document.getElementById('screen').getContext('2d');
-
+//const context = document.getElementById('screen').getContext('2d');
+constructor() {
+            super();
+            this._shadowRoot = this.attachShadow({ mode: "open" });
+            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            this._firstConnection = false;
+            var context = this._shadowRoot.getElementById('screen').getContext('2d');
+};
+/*
 function drawBackground(background, context, sprites) {
     background.ranges.forEach(([x1, x2, y1, y2]) => {
         for (let x = x1; x < x2; ++x) {
@@ -26,3 +33,4 @@ loadImage('/img/tiles.png')
         });
     });
 });
+*/
