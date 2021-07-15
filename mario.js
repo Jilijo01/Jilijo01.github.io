@@ -14,6 +14,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
+            /*
             var context = this._shadowRoot.getElementById('screen').getContext('2d');
             function loadImage(url) {
                 return new Promise(resolve => {
@@ -78,7 +79,7 @@
                             sprites.drawTile('ground', context, x, y);
                         }
                     }
-                });
+                });*/
         }
 
         //Fired when the widget is added to the html DOM of the page
