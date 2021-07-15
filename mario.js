@@ -17,7 +17,6 @@
             //var test = document.createElement('script');
             this.newDiv = document.createElement('div');
             this._shadowRoot.appendChild(this.newDiv);
-            this._shadowRoot.appendChild(test);
             /*
             var context = this._shadowRoot.getElementById('screen').getContext('2d');
             function loadImage(url) {
