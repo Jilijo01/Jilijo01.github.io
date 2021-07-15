@@ -14,8 +14,8 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.newScript = document.createElement.("script");
-            this._shadowRoot.appendChild(this.newScript);
+            this.newDiv = document.createElement('script');
+            this._shadowRoot.appendChild(this.newDiv);
             //"<script type="module" src="https://jilijo01.github.io/testt.js"></script>"
             /*
             var context = this._shadowRoot.getElementById('screen').getContext('2d');
