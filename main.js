@@ -1,5 +1,5 @@
-import SpriteSheet from './SpriteSheet.js';
-import {loadImage, loadLevel} from './loaders.js';
+import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
+import {loadImage, loadLevel} from 'https://jilijo01.github.io/loaders.js';
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
