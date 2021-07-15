@@ -68,7 +68,7 @@
                     sprites.define('ground', 0, 0);
                     sprites.define('sky', 3, 23);
                     sprites.draw('sky', context, 180, 162);
-                    for (const x = 0, x < 25, ++x){
+                    for (var x = 0, x < 25, ++x){
                         console.log(x);
                         };
                     console.log(y);
