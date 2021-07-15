@@ -1,6 +1,6 @@
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
 import {loadImage, loadLevel} from 'https://jilijo01.github.io/loaders.js';
-
+this._shadowRoot = this.attachShadow({ mode: "open" });
 //const canvas = document.getElementById('screen');
 const context = this._shadowRoot.getElementById('screen').getContext('2d');.getContext('2d');
 
