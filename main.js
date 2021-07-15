@@ -1,8 +1,8 @@
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
 import {loadImage, loadLevel} from 'https://jilijo01.github.io/loaders.js';
 
-const canvas = document.getElementById('screen');
-const context = canvas.getContext('2d');
+//const canvas = document.getElementById('screen');
+const context = this._shadowRoot.getElementById('screen').getContext('2d');.getContext('2d');
 
 function drawBackground(background, context, sprites) {
     background.ranges.forEach(([x1, x2, y1, y2]) => {
