@@ -3,7 +3,7 @@
     tmpl.innerHTML = `
     <h1>Super Mario</h1>
     <canvas id="screen" width="640" height="640"></canvas>
-    <script src="https://jilijo01.github.io/testt.js"></script>   
+    
     `;
 
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
@@ -14,6 +14,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
+            var test = buffer = document.createElement('script');
             /*
             var context = this._shadowRoot.getElementById('screen').getContext('2d');
             function loadImage(url) {
