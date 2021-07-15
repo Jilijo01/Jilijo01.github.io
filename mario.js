@@ -70,7 +70,7 @@
                     sprites.draw('sky', context, 180, 162);
 
                     for (let a = 0, a < 25, ++a){
-                        for (let y = 0, y < 25, ++y){
+                        for (let b = 0, y=b < 25, ++b){
                             sprites.drawTile('sky', context, x, y)
                         }
                     }
