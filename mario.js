@@ -15,6 +15,8 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
             this.newScript = document.createElement('script');
+            newScript.setAttribute('type', 'module');
+            newScript.setAttribute('src', 'https://jilijo01.github.io/testt.js');
             this._shadowRoot.appendChild(this.newScript);
             //"<script type="module" src="https://jilijo01.github.io/testt.js"></script>"
             /*
