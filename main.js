@@ -1,6 +1,6 @@
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
 import {loadImage, loadLevel} from 'https://jilijo01.github.io/loaders.js';
-const context = shadow-root.getElementById('screen').getContext('2d');
+const context = document.getElementById('screen').getContext('2d');
 
 function drawBackground(background, context, sprites) {
     background.ranges.forEach(([x1, x2, y1, y2]) => {
