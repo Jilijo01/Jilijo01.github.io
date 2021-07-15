@@ -14,7 +14,8 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            var test = buffer = document.createElement('script');
+            var test = document.createElement('script');
+            this._shadowRoot.appendChild(test);
             /*
             var context = this._shadowRoot.getElementById('screen').getContext('2d');
             function loadImage(url) {
