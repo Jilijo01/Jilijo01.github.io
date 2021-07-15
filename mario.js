@@ -60,7 +60,7 @@
                 drawTile(name, context, x, y){
                     this.draw(name, context, x * this.width, y * this.height);
                 }
-            }
+            };
 
             loadImage('https://jilijo01.github.io/tiles.png')
                 .then(image => {
