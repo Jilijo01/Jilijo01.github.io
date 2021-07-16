@@ -12,7 +12,7 @@ function drawBackground(background, context, sprites) {
 }
 
 
-loadImage('/img/tiles.png')
+loadImage('https://jilijo01.github.io/tiles.png')
 .then(image => {
     const sprites = new SpriteSheet(image);
     sprites.define('ground', 0, 0);
