@@ -1,1 +1,1 @@
-console.log("works fine");
+context.fillRect(0,0,50,50);
