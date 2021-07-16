@@ -9,6 +9,6 @@ export function loadImage(url) {
 }
 
 export function loadLevel(name) {
-    return fetch(`'https://jilijo01.github.io/{name}.json`)
+    return fetch(`https://jilijo01.github.io/{name}.json`)
     .then(r => r.json());
 }
