@@ -1,4 +1,4 @@
-const shadow = document.getElementById('shadowroot');
+const shadow = shadowRoot = this.attachShadow({ mode: "open" });
 const context = shadow.getElementById('screen').getContext('2d');
 /*
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
