@@ -1,4 +1,5 @@
-const context = document.getElementById('shadowroot');
+const shadow = document.getElementById('shadowroot');
+const context = shadow.getElementById('screen').getContext('2d');
 /*
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
 import {loadImage, loadLevel} from 'https://jilijo01.github.io/loaders.js';
