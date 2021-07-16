@@ -1,4 +1,4 @@
-console.log("works fine");
+const context = document.getElementById('screen').getContext('2d');
 
 /*
 import SpriteSheet from 'https://jilijo01.github.io/SpriteSheet.js';
