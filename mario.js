@@ -18,7 +18,7 @@
             this.newScript.setAttribute('type', 'module');
             this.newScript.setAttribute('src', 'https://jilijo01.github.io/main.js');
             this._shadowRoot.appendChild(this.newScript);
-           var context = this._shadowRoot.getElementById('screen').getContext('2d');
+            var context = this._shadowRoot.getElementById('screen').getContext('2d');
         }
         
 
