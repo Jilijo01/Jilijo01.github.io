@@ -116,7 +116,15 @@
                         y: 64,
                     }
 
-                    marioSprite.draw('idle',context, pos.x, pos.y, 64, 64);
+                    function update(){
+                        marioSprite.draw('idle',context, pos.x, pos.y, 64, 64);
+                        pos.x +=2;
+                        pos.y +=2;
+                        requestAnimationFrame(update);
+                    }
+
+                    update();
+                    
                 });
 
         }
