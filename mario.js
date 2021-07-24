@@ -67,6 +67,16 @@
                     .then(r => r.json());
             }
 
+            function drawBackground(background, context, sprites){
+                background.ranges.forEach([x1,x2,y1.y2]) => {
+                    for (let x = x1; x < x2; ++x) {
+                        for (let y = y1; y < y2; ++y) {
+                            sprites.drawTile(background.tile, context, x, y);
+                        }
+                    }
+                }
+            }
+
             loadImage('https://jilijo01.github.io/tiles.png')
                 .then(image => {
                     const sprites = new SpriteSheet(image, 16, 16);
@@ -77,13 +87,10 @@
                     loadLevel('1-1')
                         .then(level => {
                             console.log(level);
+                            drawBackground(level.backgrounds[0],context,sprites);
                         });
 
-                    for (let x = 0; x < 25; ++x) {
-                        for (let y = 0; y < 14; ++y) {
-                            sprites.drawTile('sky', context, x, y);
-                        }
-                    }
+
                     for (let x = 0; x < 25; ++x) {
                         for (let y = 12; y < 14; ++y) {
                             sprites.drawTile('ground', context, x, y);
