@@ -107,8 +107,11 @@
                 
             ])
                 .then(([marioSprite, sprites, level]) => {
+                    const backgroundBuffer = document.createElement('canvas');
+                    backgroundBuffer.width = 256,
+                    backgroundBuffer.height = 240,
                     level.backgrounds.forEach(background => {
-                        drawBackground(background, context, sprites);
+                        drawBackground(background, backgroundBuffer.getContext('2d'), sprites);
                     });
 
                     const pos = {
@@ -117,6 +120,7 @@
                     }
 
                     function update(){
+                        context.drawImage(backgroundBuffer, 0, 0);
                         marioSprite.draw('idle',context, pos.x, pos.y, 64, 64);
                         pos.x +=2;
                         pos.y +=2;
