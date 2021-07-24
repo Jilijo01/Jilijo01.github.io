@@ -110,7 +110,13 @@
                     level.backgrounds.forEach(background => {
                         drawBackground(background, context, sprites);
                     });
-                    marioSprite.draw('idle',context, 64,64);
+
+                    const pos = {
+                        x: 64,
+                        y: 64,
+                    }
+
+                    marioSprite.draw('idle',context, pos.x, pos.y, 64, 64);
                 });
 
         }
