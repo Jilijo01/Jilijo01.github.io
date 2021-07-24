@@ -93,7 +93,7 @@
         loadBackgroundSprites(),
         loadLevel('1-1'),
     ])
-        .then(([marioSprite, sprites, level]) => {
+        .then(([sprites, level]) => {
             level.backgrounds.forEach(background => {
                 drawBackground(background, context, sprites);
             });
