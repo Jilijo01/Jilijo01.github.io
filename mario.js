@@ -88,17 +88,7 @@
                     }
                 });
 
-    Promise.all([
-        loadBackgroundSprites(),
-        loadLevel('1-1')
-    ])
-        .then(([sprites, level]) => {
-            level.background.forEach(background => {
-                drawBackground(background, context, sprites);
-            })
-
-        });
-            
+             );
 }
 
         //Fired when the widget is added to the html DOM of the page
