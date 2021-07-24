@@ -85,7 +85,7 @@
                 return loadImage('https://jilijo01.github.io/characters.gif')
                     .then(image => {
                         const sprites = new SpriteSheet(image, 16, 16);
-                        sprites.define('idle', 16, 3, 16, 16);
+                        sprites.define('idle', 276, 44, 16, 16);
                         return sprites;
                     })
                 };
