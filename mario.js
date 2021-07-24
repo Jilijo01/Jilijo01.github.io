@@ -85,19 +85,20 @@
                         sprites.define('sky', 3, 23);
                         sprites.draw('sky', context, 180, 162);
                         return sprites;
-                    }});
+                    }
+                });
 
-            Promise.all([
-                        loadBackgroundSprites(),
-                        loadLevel('1-1')
-                    ])
-                            .then(([sprites, level]) => {
-                                level.background.forEach(background => {
-                                    drawBackground(background, context, sprites);
-                                })
+    Promise.all([
+        loadBackgroundSprites(),
+        loadLevel('1-1')
+    ])
+        .then(([sprites, level]) => {
+            level.background.forEach(background => {
+                drawBackground(background, context, sprites);
+            })
 
-                            });
-            );
+        });
+            
 }
 
         //Fired when the widget is added to the html DOM of the page
