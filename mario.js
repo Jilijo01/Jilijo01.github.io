@@ -103,7 +103,7 @@
                 
             ])
                 .then(([marioSprite, sprites, level]) => {
-                    level.backgrounds.foreach(background => {
+                    level.backgrounds.forEach(background => {
                         drawBackground(background, context, sprites);
                     });
                     marioSprite.draw('idle',context, 64,64);
