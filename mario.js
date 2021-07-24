@@ -87,7 +87,7 @@
                     loadLevel('1-1')
                         .then(level => {
                             console.log(level);
-                            drawBackground(level.backgrounds[0],context,sprites);
+                            drawBackground(level.background[0],context,sprites);
                         });
 
 
