@@ -62,12 +62,23 @@
                 }
             };
 
+            function loadLevel(name){
+                return fetch('https://jilijo01.github.io/${name}.json')
+                    .then(r => r.json());
+            }
+
             loadImage('https://jilijo01.github.io/tiles.png')
                 .then(image => {
                     const sprites = new SpriteSheet(image, 16, 16);
                     sprites.define('ground', 0, 0);
                     sprites.define('sky', 3, 23);
                     sprites.draw('sky', context, 180, 162);
+
+                    loadLevel('1-1')
+                        .then(level => {
+                            console.log(level);
+                        });
+
                     for (let x = 0; x < 25; ++x) {
                         for (let y = 0; y < 14; ++y) {
                             sprites.drawTile('sky', context, x, y);
