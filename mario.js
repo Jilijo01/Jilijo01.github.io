@@ -63,9 +63,8 @@
             };
 
             function loadLevel(name){
-                return fetch('https://jilijo01.github.io/1-1.json')
+                return fetch(`https://jilijo01.github.io/${name}.json`)
                     .then(r => r.json());
-                    console.log(name)
             }
 
             loadImage('https://jilijo01.github.io/tiles.png')
