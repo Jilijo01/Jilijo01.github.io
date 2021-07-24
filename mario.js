@@ -77,26 +77,36 @@
                 });
             }
 
+            function loadMarioSprite() {
+                return loadImage('https://jilijo01.github.io/characters.gif')
+                    .then(image => {
+                        const sprites = new SpriteSheet(image, 16, 16);
+                        sprites.define('idle', 16, 3);
+                        return sprites;
+                    })
+                };
+
             function loadBackgroundSprites() {
                 return loadImage('https://jilijo01.github.io/tiles.png')
                     .then(image => {
                         const sprites = new SpriteSheet(image, 16, 16);
                         sprites.define('ground', 0, 0);
                         sprites.define('sky', 3, 23);
-                        sprites.draw('sky', context, 180, 162);
                         return sprites;
                     })
                 };
 
     Promise.all([
         loadBackgroundSprites(),
-        loadLevel('1-1')
+        loadLevel('1-1'),
+        loadMarioSprite()
     ])
-        .then(([sprites, level]) => {
+        .then(([marioSprite, sprites, level]) => {
             level.backgrounds.forEach(background => {
                 drawBackground(background, context, sprites);
-            })
-
+            });
+            
+            marioSprite.draw('idle',context,64,64);
         });    
            
 }
