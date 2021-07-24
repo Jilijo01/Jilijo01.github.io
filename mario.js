@@ -33,23 +33,27 @@
                     this.tiles = new Map();
                 }
 
-                define(name, x, y) {
+                define(name, x, y,width, height) {
                     const buffer = document.createElement('canvas');
-                    buffer.height = this.height;
-                    buffer.width = this.width;
+                    buffer.height = height;
+                    buffer.width = width;
                     buffer
                         .getContext('2d')
                         .drawImage(
                             this.image,
-                            this.width * x,
-                            this.height * y,
-                            this.width,
-                            this.height,
+                            x,
+                            y,
+                            width,
+                            height,
                             0,
                             0,
-                            this.width,
-                            this.height);
+                            width,
+                            height);
                     this.tiles.set(name, buffer);
+                }
+
+                defineTile(name, x, y){
+                   this.define(name, x * this.width, y * this.height, this.width, this.height); 
                 }
 
                 draw(name, context, x, y) {
@@ -90,8 +94,8 @@
                 return loadImage('https://jilijo01.github.io/tiles.png')
                     .then(image => {
                         const sprites = new SpriteSheet(image, 16, 16);
-                        sprites.define('ground', 0, 0);
-                        sprites.define('sky', 3, 23);
+                        sprites.defineTile('ground', 0, 0);
+                        sprites.defineTile('sky', 3, 23);
                         return sprites;
                     })
             };
