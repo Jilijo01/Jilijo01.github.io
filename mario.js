@@ -93,7 +93,7 @@
         loadLevel('1-1')
     ])
         .then(([sprites, level]) => {
-            level.background.forEach(background => {
+            level.backgrounds.forEach(background => {
                 drawBackground(background, context, sprites);
             })
 
