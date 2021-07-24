@@ -77,7 +77,14 @@
                 });
             }
 
-
+            function loadMarioSprite() {
+                return loadImage('https://jilijo01.github.io/characters.gif')
+                    .then(image => {
+                        const sprites = new SpriteSheet(image, 16, 16);
+                        sprites.define('idle', 16, 3);
+                        return sprites;
+                    })
+                };
 
             function loadBackgroundSprites() {
                 return loadImage('https://jilijo01.github.io/tiles.png')
@@ -90,14 +97,16 @@
             };
 
             Promise.all([
+                loadMarioSprite(),
                 loadBackgroundSprites(),
                 loadLevel('1-1'),
+                
             ])
-                .then(([sprites, level]) => {
-                    level.backgrounds.forEach(background => {
+                .then(([marioSprite, sprites, level]) => {
+                    level.backgrounds.foreach(background => {
                         drawBackground(background, context, sprites);
                     });
-
+                    marioSprite.draw('idle',context, 64,64);
                 });
 
         }
