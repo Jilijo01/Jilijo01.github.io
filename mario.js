@@ -199,8 +199,8 @@
                             accumulatedTime -= deltaTime;
                         }
                         
-                        //requestAnimationFrame(update);
-                        setTimeout(update, 1000/60, performance.now());
+                        requestAnimationFrame(update);
+                        //setTimeout(update, 1000/60, performance.now());
                         lastTime = time;
                     }
 
