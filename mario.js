@@ -191,7 +191,7 @@
                         deltaTime = time - lastTime;
                         console.log(deltaTime, time)
                         comp.draw(context);
-                        mario.update();
+                        mario.update(time);
                         mario.vel.y += gravity;
                         requestAnimationFrame(update);
 
