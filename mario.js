@@ -5,7 +5,6 @@
     <canvas id="screen" width="640" height="640"></canvas>
         
     `;
-a
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
 
 
