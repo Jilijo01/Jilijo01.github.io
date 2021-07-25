@@ -187,7 +187,7 @@
                     let deltaTime = 0;
                     let lastTime = 0;
 
-                    function update() {
+                    function update(time) {
                         deltaTime = time - lastTime;
                         console.log(deltaTime, time)
                         comp.draw(context);
