@@ -131,21 +131,21 @@
                 }
             }
 
-            function createMario(){
+            function createMario() {
                 return loadMarioSprite()
-                .then(sprite => {
-                    const mario = new entity();
-    
-                    mario.draw = function drawMario (context){
-                        sprite.draw('idle', context, this.pos.x, this.pos.y);
-                    }
-    
-                    mario.update = function updateMario(deltaTime) {
-                        this.pos.x += this.vel.x * deltaTime;
-                        this.pos.y += this.vel.y * deltaTime;
-                    };
-                    return mario;
-                });
+                    .then(sprite => {
+                        const mario = new entity();
+
+                        mario.draw = function drawMario(context) {
+                            sprite.draw('idle', context, this.pos.x, this.pos.y);
+                        }
+
+                        mario.update = function updateMario(deltaTime) {
+                            this.pos.x += this.vel.x * deltaTime;
+                            this.pos.y += this.vel.y * deltaTime;
+                        };
+                        return mario;
+                    });
 
             }
 
@@ -166,6 +166,31 @@
                 }
             }
 
+            class Timer {
+                constructor(deltaTime = 1 / 60) {
+                    let accumulatedTime = 0;
+                    let lastTime = 0;
+
+                    this.updateProxy = (time) => {
+                        accumulatedTime += (time - lastTime) / 1000;
+                        while (accumulatedTime > deltaTime) {
+                            this.update(deltaTime);
+                            accumulatedTime -= deltaTime;
+                        }
+                        lastTime = time;
+                        this.enqueue();
+                    }
+                }
+
+                enqueue() {
+                    requestAnimationFrame(this.updateProxy);
+                }
+
+                start() {
+                    this.enqueue();
+                }
+            }
+
             Promise.all([
                 createMario(),
                 loadBackgroundSprites(),
@@ -181,73 +206,65 @@
                     mario.pos.set(64, 180);
                     mario.vel.set(200, -600);
 
- 
+
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
 
-                    const deltaTime = 1/60;
-                    let accumulatedTime = 0;
-                    let lastTime = 0;
+                    const timer = new Timer(1 / 60);
+                    timer.update() = function update(deltaTime)
+                    const deltaTime = 1 / 60;
+                    comp.draw(context);
+                    mario.update(deltaTime);
+                    mario.vel.y += gravity;
+                    
+                }
 
-                    function update(time) {
-                        accumulatedTime += (time - lastTime) /1000;
-                        console.log(deltaTime, time)
-                        while (accumulatedTime > deltaTime){
-                            comp.draw(context);
-                            mario.update(deltaTime);
-                            mario.vel.y += gravity;
-                            accumulatedTime -= deltaTime;
-                        }
-                        
-                        requestAnimationFrame(update);
-                        //setTimeout(update, 1000/60, performance.now());
-                        lastTime = time;
-                    }
+        
 
-                    update(0);
+        update(0);
 
-                });
+    });
 
-        }
+}
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback() {
-            this._firstConnection = true;
-            this.redraw();
-        }
+    this._firstConnection = true;
+    this.redraw();
+}
 
-        //Fired when the widget is removed from the html DOM of the page (e.g. by hide)
-        disconnectedCallback() {
+//Fired when the widget is removed from the html DOM of the page (e.g. by hide)
+disconnectedCallback() {
 
-        }
+}
 
-        //When the custom widget is updated, the Custom Widget SDK framework executes this function first
-        onCustomWidgetBeforeUpdate(oChangedProperties) {
+//When the custom widget is updated, the Custom Widget SDK framework executes this function first
+onCustomWidgetBeforeUpdate(oChangedProperties) {
 
-        }
+}
 
-        //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-        onCustomWidgetAfterUpdate(oChangedProperties) {
-            if (this._firstConnection) {
-                this.redraw();
-            }
-        }
+//When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+onCustomWidgetAfterUpdate(oChangedProperties) {
+    if (this._firstConnection) {
+        this.redraw();
+    }
+}
 
-        //When the custom widget is removed from the canvas or the analytic application is closed
-        onCustomWidgetDestroy() {
-        }
+//When the custom widget is removed from the canvas or the analytic application is closed
+onCustomWidgetDestroy() {
+}
 
 
-        //When the custom widget is resized on the canvas, the Custom Widget SDK framework executes the following JavaScript function call on the custom widget
-        // Commented out by default.  If it is enabled, SAP Analytics Cloud will track DOM size changes and call this callback as needed
-        //  If you don't need to react to resizes, you can save CPU by leaving it uncommented.
-        /*
-        onCustomWidgetResize(width, height){
-            redraw()
-        }
-        */
+//When the custom widget is resized on the canvas, the Custom Widget SDK framework executes the following JavaScript function call on the custom widget
+// Commented out by default.  If it is enabled, SAP Analytics Cloud will track DOM size changes and call this callback as needed
+//  If you don't need to react to resizes, you can save CPU by leaving it uncommented.
+/*
+onCustomWidgetResize(width, height){
+    redraw()
+}
+*/
 
-        redraw() {
-        }
+redraw() {
+}
     });
-})();
+}) ();
