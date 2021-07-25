@@ -132,7 +132,7 @@
             }
 
             function createMario(){
-                return loadMarioSprite();
+                return loadMarioSprite()
                 .then(sprite => {
                     const mario = new entity();
                     mario.pos.set(64, 180);
