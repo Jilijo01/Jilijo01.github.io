@@ -112,6 +112,7 @@
 
             function createBackgroundLayer(background, sprites){
                 const buffer = document.createElement('canvas');
+                this._shadowRoot.appendChild(buffer);
                 buffer.width = 256,
                 buffer.height = 240,
 
