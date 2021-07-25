@@ -149,13 +149,18 @@
                         y: 64,
                     }
 
+                    const vel = {
+                        x: 2,
+                        y: -10,
+                    }
+
                     const spriteLayer = createSpriteLayer(marioSprite, pos);
                     comp.layers.push(spriteLayer);
 
                     function update() {
                         comp.draw(context);
-                        pos.x += 2;
-                        pos.y += 2;
+                        pos.x += vel.x;
+                        pos.y += vel.y;
                         requestAnimationFrame(update);
                     }
 
