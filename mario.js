@@ -135,16 +135,14 @@
                 return loadMarioSprite()
                 .then(sprite => {
                     const mario = new entity();
-                    mario.pos.set(64, 180);
-                    mario.vel.set(2, -10);
     
                     mario.draw = function drawMario (context){
                         sprite.draw('idle', context, this.pos.x, this.pos.y);
                     }
     
-                    mario.update = function updateMario() {
-                        this.pos.x += this.vel.x;
-                        this.pos.y += this.vel.y;
+                    mario.update = function updateMario(deltaTime) {
+                        this.pos.x += this.vel.x * deltaTime;
+                        this.pos.y += this.vel.y * deltaTime;
                     };
                     return mario;
                 });
@@ -179,26 +177,29 @@
 
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
                     comp.layers.push(backgroundLayer);
-                    const gravity = 0.5;
+                    const gravity = 30;
+                    mario.pos.set(64, 180);
+                    mario.vel.set(200, -600);
+
  
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
 
-                    let deltaTime = 0;
+                    const deltaTime = 1/60;
                     let lastTime = 0;
 
-                    function update(time) {
-                        deltaTime = time - lastTime;
+                    function update() {
+                        deltaTime = (time - lastTime) /1000;
                         console.log(deltaTime, time)
                         comp.draw(context);
                         mario.update(time);
                         mario.vel.y += gravity;
-                        requestAnimationFrame(update);
-
+                        //requestAnimationFrame(update);
+                        setTimeout(update, 1000/60, performance.now());
                         lastTime = time;
                     }
 
-                    update();
+                    update(0);
 
                 });
 
