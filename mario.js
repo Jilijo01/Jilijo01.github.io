@@ -110,13 +110,12 @@
                     });
             }
 
-            function createBackgroundLayer(background, sprites){
+            function createBackgroundLayer(backgrounds, sprites){
                 const buffer = document.createElement('canvas');
-                this._shadowRoot.appendChild(buffer);
                 buffer.width = 256,
                 buffer.height = 240,
 
-                background.forEach(background => {
+                backgrounds.forEach(background => {
                     drawBackground(background, buffer.getContext('2d'), sprites);
                 });
 
