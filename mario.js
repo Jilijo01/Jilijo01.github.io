@@ -126,7 +126,10 @@
 
             function createSpriteLayer(sprite, pos){
                 return function drawSpritesLayer(context){
-                    sprite.draw('idle', context, pos.x, pos.y);
+                    for(let i = 0, i < 20, i++){\
+                        sprite.draw('idle', context, pos.x, pos.y);
+                    }
+                    
                 }
             }
 
@@ -136,7 +139,7 @@
                 loadLevel('1-1'),
 
             ])
-                .then(([marioSprite, sprites, level]) => {
+                .then(([marioSprite, backgroundSprites, level]) => {
                     const comp = new Compositor();
 
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, sprites);
@@ -144,8 +147,8 @@
 
 
                     const pos = {
-                        x: 64,
-                        y: 64,
+                        x: 0,
+                        y: 0,
                     }
 
                     const spriteLayer = createSpriteLayer(marioSprite, pos);
