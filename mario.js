@@ -125,9 +125,8 @@
 
             function createSpriteLayer(sprite, pos) {
                 return function drawSpritesLayer(context) {
-                    for (let i = 0; i < 20; i++) {
-                        sprite.draw('idle', context, pos.x + i * 16, pos.y);
-                    }
+                    sprite.draw('idle', context, pos.x, pos.y);
+                    
 
                 }
             }
@@ -146,8 +145,8 @@
 
 
                     const pos = {
-                        x: 0,
-                        y: 0,
+                        x: 64,
+                        y: 64,
                     }
 
                     const spriteLayer = createSpriteLayer(marioSprite, pos);
