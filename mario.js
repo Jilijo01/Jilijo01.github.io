@@ -189,10 +189,10 @@
                     let lastTime = 0;
 
                     function update(time) {
-                        deltaTime = (time - lastTime) /1000;
+                        //deltaTime = (time - lastTime) /1000;
                         console.log(deltaTime, time)
                         comp.draw(context);
-                        mario.update(time);
+                        mario.update(deltaTime);
                         mario.vel.y += gravity;
                         //requestAnimationFrame(update);
                         setTimeout(update, 1000/60, performance.now());
