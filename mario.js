@@ -133,8 +133,18 @@
 
             class Vec2 {
                 constructor(x, y){
+                    this.set(x, y);
+                }
+                set (x, y) {
                     this.x = x;
                     this.y = y;
+                }
+            }
+
+            class entity{
+                constructor(){
+                    this.pos = new Vec2(0, 0);
+                    this.vel = new Vec2(0, 0);
                 }
             }
 
@@ -152,18 +162,18 @@
 
                     const gravity = 0.5;
 
-                    const pos = new Vec2(64, 180);
-
-                    const vel = new Vec2(2, -10);
-
-                    const spriteLayer = createSpriteLayer(marioSprite, pos);
+                    const mario = new entity();
+                    mario.pos.set(64, 180);
+                    mario.vel.set(64, 180);
+                    
+                    const spriteLayer = createSpriteLayer(marioSprite, mario.pos);
                     comp.layers.push(spriteLayer);
 
                     function update() {
                         comp.draw(context);
-                        pos.x += vel.x;
-                        pos.y += vel.y;
-                        vel.y += gravity;
+                        mario.pos.x += mario.vel.x;
+                        mario.pos.y += mario.vel.y;
+                        mario.vel.y += gravity;
                         requestAnimationFrame(update);
                     }
 
