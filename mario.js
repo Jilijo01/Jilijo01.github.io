@@ -146,7 +146,7 @@
 
                     const pos = {
                         x: 64,
-                        y: 64,
+                        y: 180,
                     }
 
                     const vel = {
@@ -161,6 +161,7 @@
                         comp.draw(context);
                         pos.x += vel.x;
                         pos.y += vel.y;
+                        vel.y += 0.5;
                         requestAnimationFrame(update);
                     }
 
