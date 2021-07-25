@@ -115,7 +115,7 @@
                 buffer.width = 256,
                 buffer.height = 240,
 
-                backgrounds.forEach(background => {
+                background.forEach(background => {
                     drawBackground(background, buffer.getContext('2d'), sprites);
                 });
 
