@@ -188,7 +188,7 @@
                     const deltaTime = 1/60;
                     let lastTime = 0;
 
-                    function update() {
+                    function update(time) {
                         deltaTime = (time - lastTime) /1000;
                         console.log(deltaTime, time)
                         comp.draw(context);
