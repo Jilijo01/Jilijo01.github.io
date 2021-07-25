@@ -200,7 +200,7 @@
                         }
                         
                         //requestAnimationFrame(update);
-                        setTimeout(update, 1000/144, performance.now());
+                        setTimeout(update, 1000/60, performance.now());
                         lastTime = time;
                     }
 
