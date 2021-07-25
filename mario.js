@@ -211,17 +211,18 @@
                     comp.layers.push(spriteLayer);
 
                     const timer = new Timer(1 / 60);
-                    timer.update() = function update(deltaTime)
-                    const deltaTime = 1 / 60;
-                    comp.draw(context);
-                    mario.update(deltaTime);
-                    mario.vel.y += gravity;
+                    timer.update() = function update(deltaTime){
+                        comp.draw(context);
+                        mario.update(deltaTime);
+                        mario.vel.y += gravity;
+                    }
+                 
                     
                 }
 
         
 
-        update(0);
+        timer.start();
 
     });
 
