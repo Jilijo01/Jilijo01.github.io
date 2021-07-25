@@ -52,8 +52,8 @@
                     this.tiles.set(name, buffer);
                 }
 
-                defineTile(name, x, y){
-                   this.define(name, x * this.width, y * this.height, this.width, this.height); 
+                defineTile(name, x, y) {
+                    this.define(name, x * this.width, y * this.height, this.width, this.height);
                 }
 
                 draw(name, context, x, y) {
@@ -88,7 +88,7 @@
                         sprites.define('idle', 276, 44, 16, 16);
                         return sprites;
                     })
-                };
+            };
 
             function loadBackgroundSprites() {
                 return loadImage('https://jilijo01.github.io/tiles.png')
@@ -100,26 +100,33 @@
                     })
             };
 
-            class Compositor{
-                constructor(){
+            class Compositor {
+                constructor() {
                     this.layers = [];
                 }
                 draw(context) {
                     this.layers.forEach(layers => {
                         layers(context);
                     });
-            }};
+                }
+            };
 
-            function createBackgroundLayer(backgrounds, sprites){
+            function createBackgroundLayer(backgrounds, sprites) {
                 const buffer = document.createElement('canvas');
                 buffer.width = 256,
-                buffer.height = 240,
-                backgrounds.forEach(background => {
-                    drawBackground(background, buffer.getContext('2d'), sprites);
-                });
+                    buffer.height = 240,
+                    backgrounds.forEach(background => {
+                        drawBackground(background, buffer.getContext('2d'), sprites);
+                    });
 
-                return function drawBackgroundLayer (context){
+                return function drawBackgroundLayer(context) {
                     context.drawImage(buffer, 0, 0);
+                }
+            }
+
+            function createSpriteLayer(sprite, pos){
+                return function drawSpritesLayer(context){
+                    sprite.draw('idle', context, pos.x, pos.y);
                 }
             }
 
@@ -127,30 +134,32 @@
                 loadMarioSprite(),
                 loadBackgroundSprites(),
                 loadLevel('1-1'),
-                
+
             ])
                 .then(([marioSprite, sprites, level]) => {
                     const comp = new Compositor();
 
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, sprites);
                     comp.layers.push(backgroundLayer);
- 
+
 
                     const pos = {
                         x: 64,
                         y: 64,
                     }
 
-                    function update(){
+                    const spriteLayer = createSpriteLayer(marioSprite, pos);
+                    comp.layers.push(spriteLayer);
+
+                    function update() {
                         comp.draw(context);
-                        marioSprite.draw('idle',context, pos.x, pos.y, 64, 64);
-                        pos.x +=2;
-                        pos.y +=2;
+                        pos.x += 2;
+                        pos.y += 2;
                         requestAnimationFrame(update);
                     }
 
                     update();
-                    
+
                 });
 
         }
