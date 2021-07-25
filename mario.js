@@ -213,20 +213,19 @@
                         mario.update(deltaTime);
                         mario.vel.y += gravity;
                     }
-                    timer.start(); 
+                timer.start(); 
                     
-                }
+                }   
 
-        
 
-        
 
-    });
+        })
+};
 
 }
 
-        //Fired when the widget is added to the html DOM of the page
-        connectedCallback() {
+//Fired when the widget is added to the html DOM of the page
+connectedCallback() {
     this._firstConnection = true;
     this.redraw();
 }
