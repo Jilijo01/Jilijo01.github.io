@@ -126,8 +126,8 @@
 
             function createSpriteLayer(sprite, pos){
                 return function drawSpritesLayer(context){
-                    for(let i = 0, i < 20, i++){
-                        sprite.draw('idle'; context; pos.x; pos.y);
+                    for(let i = 0; i < 20; i++){
+                        sprite.draw('idle, context, pos.x, pos.y);
                     }
                     
                 }
