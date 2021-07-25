@@ -176,7 +176,7 @@
 
                     function update() {
                         comp.draw(context);
-
+                        mario.update();
                         mario.vel.y += gravity;
                         requestAnimationFrame(update);
                     }
