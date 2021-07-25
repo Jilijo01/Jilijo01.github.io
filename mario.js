@@ -126,23 +126,23 @@
             function createSpriteLayer(sprite, pos) {
                 return function drawSpritesLayer(context) {
                     sprite.draw('idle', context, pos.x, pos.y);
-                    
+
 
                 }
             }
 
             class Vec2 {
-                constructor(x, y){
+                constructor(x, y) {
                     this.set(x, y);
                 }
-                set (x, y) {
+                set(x, y) {
                     this.x = x;
                     this.y = y;
                 }
             }
 
-            class entity{
-                constructor(){
+            class entity {
+                constructor() {
                     this.pos = new Vec2(0, 0);
                     this.vel = new Vec2(0, 0);
                 }
@@ -165,14 +165,18 @@
                     const mario = new entity();
                     mario.pos.set(64, 180);
                     mario.vel.set(2, -10);
-                    
+
+                    mario.update = function updateMario() {
+                        this.pos.x += this.vel.x;
+                        this.pos.y += this.vel.y;
+                    };
+
                     const spriteLayer = createSpriteLayer(marioSprite, mario.pos);
                     comp.layers.push(spriteLayer);
 
                     function update() {
                         comp.draw(context);
-                        mario.pos.x += mario.vel.x;
-                        mario.pos.y += mario.vel.y;
+
                         mario.vel.y += gravity;
                         requestAnimationFrame(update);
                     }
