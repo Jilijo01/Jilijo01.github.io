@@ -131,6 +131,26 @@
                 }
             }
 
+            function createMario(){
+                return loadMarioSprite();
+                .then(sprite => {
+                    const mario = new entity();
+                    mario.pos.set(64, 180);
+                    mario.vel.set(2, -10);
+    
+                    mario.draw = function drawMario (context){
+                        sprite.draw('idle', context, this.pos.x, this.pos.y);
+                    }
+    
+                    mario.update = function updateMario() {
+                        this.pos.x += this.vel.x;
+                        this.pos.y += this.vel.y;
+                    };
+                    return mario;
+                });
+
+            }
+
             class Vec2 {
                 constructor(x, y) {
                     this.set(x, y);
@@ -149,12 +169,12 @@
             }
 
             Promise.all([
-                loadMarioSprite(),
+                createMario(),
                 loadBackgroundSprites(),
                 loadLevel('1-1'),
 
             ])
-                .then(([marioSprite, backgroundSprites, level]) => {
+                .then(([mario, backgroundSprites, level]) => {
                     const comp = new Compositor();
 
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
@@ -162,18 +182,7 @@
 
                     const gravity = 0.5;
 
-                    const mario = new entity();
-                    mario.pos.set(64, 180);
-                    mario.vel.set(2, -10);
 
-                    mario.draw = function drawMario (context){
-                        marioSprite.draw('idle', context, this.pos.x, this.pos.y);
-                    }
-
-                    mario.update = function updateMario() {
-                        this.pos.x += this.vel.x;
-                        this.pos.y += this.vel.y;
-                    };
 
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
