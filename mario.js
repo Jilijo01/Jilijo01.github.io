@@ -164,7 +164,7 @@
 
                     const mario = new entity();
                     mario.pos.set(64, 180);
-                    mario.vel.set(64, 180);
+                    mario.vel.set(2, -10);
                     
                     const spriteLayer = createSpriteLayer(marioSprite, mario.pos);
                     comp.layers.push(spriteLayer);
