@@ -186,16 +186,21 @@
                     comp.layers.push(spriteLayer);
 
                     const deltaTime = 1/60;
+                    let accumulatedTime = 0;
                     let lastTime = 0;
 
                     function update(time) {
-                        //deltaTime = (time - lastTime) /1000;
+                        accumulatedTime += (time - lastTime) /1000;
                         console.log(deltaTime, time)
-                        comp.draw(context);
-                        mario.update(deltaTime);
-                        mario.vel.y += gravity;
+                        while (accumulatedTime > deltaTime){
+                            comp.draw(context);
+                            mario.update(deltaTime);
+                            mario.vel.y += gravity;
+                            accumulatedTime -= deltaTime;
+                        }
+                        
                         //requestAnimationFrame(update);
-                        setTimeout(update, 1000/60, performance.now());
+                        setTimeout(update, 1000/144, performance.now());
                         lastTime = time;
                     }
 
