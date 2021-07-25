@@ -199,14 +199,11 @@
             ])
                 .then(([mario, backgroundSprites, level]) => {
                     const comp = new Compositor();
-
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
                     //comp.layers.push(backgroundLayer);
                     const gravity = 30;
                     mario.pos.set(64, 180);
                     mario.vel.set(200, -600);
-
-
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
 
@@ -216,13 +213,13 @@
                         mario.update(deltaTime);
                         mario.vel.y += gravity;
                     }
-                 
+                    timer.start(); 
                     
                 }
 
         
 
-        timer.start();
+        
 
     });
 
