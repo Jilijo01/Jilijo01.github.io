@@ -179,19 +179,23 @@
 
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
                     comp.layers.push(backgroundLayer);
-
                     const gravity = 0.5;
-
-
-
+ 
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
 
+                    let deltaTime = 0;
+                    let lastTime = 0;
+
                     function update() {
+                        deltaTime = time - lastTime;
+                        console.log(deltaTime, time)
                         comp.draw(context);
                         mario.update();
                         mario.vel.y += gravity;
                         requestAnimationFrame(update);
+
+                        lastTime = time;
                     }
 
                     update();
