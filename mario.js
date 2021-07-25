@@ -110,7 +110,7 @@
                     });
             }
 
-            function createBackgroundLayer(backgrounds, sprites){
+            function createBackgroundLayer(background, sprites){
                 const buffer = document.createElement('canvas');
                 buffer.width = 256,
                 buffer.height = 240,
