@@ -5,7 +5,7 @@
     <canvas id="screen" width="640" height="640"></canvas>
         
     `;
-
+a
     customElements.define('com-sap-sample-helloworld1', class HelloWorld1 extends HTMLElement {
 
 
@@ -142,7 +142,7 @@
                 .then(([marioSprite, backgroundSprites, level]) => {
                     const comp = new Compositor();
 
-                    const backgroundLayer = createBackgroundLayer(level.backgrounds, sprites);
+                    const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
                     comp.layers.push(backgroundLayer);
 
 
