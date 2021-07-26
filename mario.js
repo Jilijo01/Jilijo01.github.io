@@ -179,6 +179,18 @@
                 }
             }
 
+            //math.js
+            class Vec2 {
+                constructor(x, y) {
+                    this.set(x, y);
+                }
+                set(x, y) {
+                    this.x = x;
+                    this.y = y;
+                }
+            }
+            //math.js
+
              // Entity.js
              class Trait {
                 constructor(name){
@@ -238,20 +250,6 @@
                     }
 
             //entities.js
-
-            //math.js
-            class Vec2 {
-                constructor(x, y) {
-                    this.set(x, y);
-                }
-                set(x, y) {
-                    this.x = x;
-                    this.y = y;
-                }
-            }
-            //math.js
-
-           
 
             class Timer {
                 constructor(deltaTime = 1 / 60) {
