@@ -60,7 +60,7 @@
             //Timer.js
 
             //math.js
-            export class Vec2 {
+            class Vec2 {
                 constructor(x, y) {
                     this.set(x, y);
                 }
