@@ -72,12 +72,6 @@
                 });
             }
            
-           const input = new KeyboardState();
-           input.addMapping(32, keyState =>{
-               console.log(keyState);
-           });
-           input.listenTo(window);
-
             class SpriteSheet {
                 constructor(image, w = 16, h = 16) {
                     this.image = image;
@@ -184,6 +178,17 @@
 
                 }
             }
+            //entities.js
+
+            class Velocity {
+                constructor(){
+                    super('velocity');
+                }
+                update(entity, deltaTime){
+                    entity.pos.x += entity.vel.x * deltaTime;
+                    entity.pos.y += entity.vel.y * deltaTime;
+                }
+            }
 
             function createMario() {
                 return loadMarioSprite()
@@ -193,16 +198,16 @@
                         mario.draw = function drawMario(context) {
                             sprite.draw('idle', context, this.pos.x, this.pos.y);
                         }
-
-                        mario.update = function updateMario(deltaTime) {
-                            this.pos.x += this.vel.x * deltaTime;
-                            this.pos.y += this.vel.y * deltaTime;
+                        mario.addTrait(new Velocity());
+                        
                         };
                         return mario;
                     });
 
             }
+            //entities.js
 
+            //math.js
             class Vec2 {
                 constructor(x, y) {
                     this.set(x, y);
@@ -212,13 +217,39 @@
                     this.y = y;
                 }
             }
+            //math.js
+
+            // Entity.js
+            class Trait {
+                constructor(name){
+                    this.NAME = name;
+                }
+
+                update(){
+                    console.warn('Unhandled update call in Trait');
+                }
+            }
 
             class entity {
                 constructor() {
                     this.pos = new Vec2(0, 0);
                     this.vel = new Vec2(0, 0);
+
+                    this.traits = [];
+                }
+
+                addTrait(trait){
+                    this.traits.push(trait);
+                    this.[trait.NAME] = trait;
+                }
+
+                update(deltaTime){
+                    this.traits.forEach(trait =>{
+                        trait.update(this, deltaTime);
+                    });
                 }
             }
+            // Entity.js
 
             class Timer {
                 constructor(deltaTime = 1 / 60) {
@@ -256,6 +287,19 @@
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
                     comp.layers.push(backgroundLayer);
                     const gravity = 2000;
+
+                    const SPACE = 32;
+                    const input = new KeyboardState();
+                    input.addMapping(SPACE, keyState =>{
+                        if (keyState){
+                            mario.jump.start();
+                        } else {
+                            mario.jump.cancel();
+                        }
+                        console.log(keyState);
+                    });
+                    input.listenTo(window);
+
                     mario.pos.set(64, 180);
                     mario.vel.set(200, -600);
                     const spriteLayer = createSpriteLayer(mario);
