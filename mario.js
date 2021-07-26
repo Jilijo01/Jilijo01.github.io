@@ -200,9 +200,9 @@
                         }
                         mario.addTrait(new Velocity());
                         
-                        };
+                        });
                         return mario;
-                    )};
+                    };
 
             //entities.js
 
