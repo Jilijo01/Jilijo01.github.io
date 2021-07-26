@@ -29,10 +29,12 @@
                 console.log(event);
             });
             */
-           const input = new KeyboardState();
+           const input = new Keyboard();
            input.addMapping(32, keyState =>{
                console.log(keyState);
-           })
+           });
+           input.listenTo(window);
+
             class SpriteSheet {
                 constructor(image, w = 16, h = 16) {
                     this.image = image;
@@ -200,7 +202,7 @@
                 }
             }
 
-            /*Keyboard Input Handeling
+            //Keyboard Input Handeling
             const PRESSED = 1;
             const RELEASED = 0;
 
@@ -238,14 +240,14 @@
 
                 listenTo(window){
                     ['keydown', 'keyup'].forEach(eventName =>{
-                        window.addEventListener( event =>{
+                        window.addEventListener(eventName, event =>{
                             this.handleEvent(event);
                         });
                     });
                     
                 }
             }
-            Keyboard Input Handeling*/
+            //Keyboard Input Handeling
 
             Promise.all([
                 createMario(),
