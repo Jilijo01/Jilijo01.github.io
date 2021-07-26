@@ -288,9 +288,12 @@
                     const comp = new Compositor();
                     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
                     comp.layers.push(backgroundLayer);
+                    
                     const gravity = 2000;
-
                     const SPACE = 32;
+                    mario.pos.set(64, 180);
+                    mario.vel.set(200, -600);
+                    
                     const input = new KeyboardState();
                     input.addMapping(SPACE, keyState =>{
                         if (keyState){
@@ -302,8 +305,7 @@
                     });
                     input.listenTo(window);
 
-                    mario.pos.set(64, 180);
-                    mario.vel.set(200, -600);
+
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
 
