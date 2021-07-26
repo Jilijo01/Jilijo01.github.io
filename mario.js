@@ -199,7 +199,7 @@
                 }
 
                 addTrait(trait){
-                    this.traits.push(trait)
+                    this.traits.push(trait);
                     this[trait.NAME] = trait;
                 }
 
@@ -227,11 +227,11 @@
                 return loadMarioSprite()
                     .then(sprite => {
                         const mario = new entity();
-
+                        mario.addTrait(new Velocity());
                         mario.draw = function drawMario(context) {
                             sprite.draw('idle', context, this.pos.x, this.pos.y);
                         }
-                        mario.addTrait(new Velocity());
+                        
                         
                         });
                         return mario;
