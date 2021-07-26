@@ -238,7 +238,7 @@
                 }
 
                 addTrait(trait){
-                    this.traits.push(trait);
+                    this.traits.push(trait)
                     this.[trait.NAME] = trait;
                 }
 
