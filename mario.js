@@ -291,8 +291,9 @@
                     
                     const gravity = 2000;
                     const SPACE = 32;
-                    mario.pos.set(64, 180);
                     mario.vel.set(200, -600);
+                    mario.pos.set(64, 180);
+                    
                     
                     const input = new KeyboardState();
                     input.addMapping(SPACE, keyState =>{
