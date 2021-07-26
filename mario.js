@@ -202,9 +202,8 @@
                         
                         };
                         return mario;
-                    });
+                    )};
 
-            }
             //entities.js
 
             //math.js
