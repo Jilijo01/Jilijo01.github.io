@@ -207,8 +207,8 @@
                     const spriteLayer = createSpriteLayer(mario);
                     comp.layers.push(spriteLayer);
 
-                    const timer = new Timer(1 / 60)
-                    timer.update() = function update(deltaTime){
+                    const timer = new Timer(1 / 60);
+                    timer.update = function update(deltaTime){
                         comp.draw(context);
                         mario.update(deltaTime);
                         mario.vel.y += gravity;
