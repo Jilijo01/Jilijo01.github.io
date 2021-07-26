@@ -72,7 +72,7 @@
                 });
             }
            
-           const input = new Keyboard();
+           const input = new KeyboardState();
            input.addMapping(32, keyState =>{
                console.log(keyState);
            });
