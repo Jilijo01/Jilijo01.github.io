@@ -213,9 +213,9 @@
 
             //entities.js
 
-            class Velocity {
+            class Velocity extends Trait{
                 constructor(){
-                    //super('velocity');
+                    super('velocity');
                 }
                 update(entity, deltaTime){
                     entity.pos.x += entity.vel.x * deltaTime;
