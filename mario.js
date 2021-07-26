@@ -180,7 +180,7 @@
             }
             //entities.js
 
-            class Velocity extends Trait{
+            class Velocity {
                 constructor(){
                     super('velocity');
                 }
