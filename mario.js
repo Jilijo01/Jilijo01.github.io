@@ -197,7 +197,7 @@
                 }
             }
 
-            //Keyboard Input Handeling
+            /*Keyboard Input Handeling
             const PRESSED = 1;
             const RELEASED = 0;
 
@@ -242,7 +242,7 @@
                     
                 }
             }
-            //Keyboard Input Handeling
+            //Keyboard Input Handeling */
 
             Promise.all([
                 createMario(),
