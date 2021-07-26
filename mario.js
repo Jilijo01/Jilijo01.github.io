@@ -23,12 +23,7 @@
                     image.src = url;
                 });
             }
-            /*
-            window.addEventListener('keydown', event =>{
-                event.preventDefault();
-                console.log(event);
-            });
-            */
+           
            const input = new Keyboard();
            input.addMapping(32, keyState =>{
                console.log(keyState);
