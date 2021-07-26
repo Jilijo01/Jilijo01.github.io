@@ -239,7 +239,7 @@
 
                 addTrait(trait){
                     this.traits.push(trait)
-                    this.[trait.NAME] = trait;
+                    this[trait.NAME] = trait;
                 }
 
                 update(deltaTime){
