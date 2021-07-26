@@ -24,6 +24,10 @@
                 });
             }
 
+            window.addEventListener('keydown', event =>{
+                console.log(event);
+            });
+
             class SpriteSheet {
                 constructor(image, w = 16, h = 16) {
                     this.image = image;
