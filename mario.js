@@ -215,7 +215,7 @@
 
             class Velocity {
                 constructor(){
-                    super('velocity');
+                    //super('velocity');
                 }
                 update(entity, deltaTime){
                     entity.pos.x += entity.vel.x * deltaTime;
