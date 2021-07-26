@@ -19,7 +19,7 @@
             const PRESSED = 1;
             const RELEASED = 0;
 
-            class KeyboardState(){
+            class KeyboardState{
                 constructor(){
                     // holds the current state of a given key
                     this.keyStates = new Map();
@@ -71,7 +71,12 @@
                     image.src = url;
                 });
             }
-
+           
+           const input = new Keyboard();
+           input.addMapping(32, keyState =>{
+               console.log(keyState);
+           });
+           input.listenTo(window);
 
             class SpriteSheet {
                 constructor(image, w = 16, h = 16) {
