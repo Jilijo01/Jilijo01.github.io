@@ -216,7 +216,7 @@
             }
 
             function loadBackgroundSprites() {
-                return loadImage('/https://jilijo01.github.io/tiles.png')
+                return loadImage('https://jilijo01.github.io/tiles.png')
                     .then(image => {
                         const sprites = new SpriteSheet(image, 16, 16);
                         sprites.defineTile('ground', 0, 0);
