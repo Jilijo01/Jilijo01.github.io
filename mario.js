@@ -341,7 +341,7 @@
             
             
                 const SPACE = 32;
-                const input = new Keyboard();
+                const input = new KeyboardState();
                 input.addMapping(SPACE, keyState => {
                     if (keyState) {
                         mario.jump.start();
