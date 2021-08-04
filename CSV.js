@@ -5,7 +5,7 @@
     <input type="file" id="upload-csv" accept=".csv"></input>
     <button id="btn-upload-csv">Read CSV</button>
     <table id="tbl-data">
-        
+    <script type=""text/javascript" src="https://github.com/mholt/PapaParse/blob/master/papaparse.js"></script>    
     </table>
     `;
 
