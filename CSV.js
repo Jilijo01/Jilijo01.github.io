@@ -2,7 +2,7 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     <h1>CSV INPUT</h1>
-    <canvas id="screen" width="640" height="640"></canvas>
+    
         
     `;
     customElements.define('com-sap-sample-helloworld2', class HelloWorld2 extends HTMLElement {
