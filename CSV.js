@@ -2,7 +2,7 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     <title>READ CSV</title>
-    <input> type="file" id="upload-csv" accept=".csv"></input>
+    <input type="file" id="upload-csv" accept=".csv"></input>
     <button id="btn-upload-csv">Read CSV</button>
     <table id="tbl-data">
         
