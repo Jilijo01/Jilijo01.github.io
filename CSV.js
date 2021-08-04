@@ -1,12 +1,23 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
+    <script type=""text/javascript" src="https://raw.githubusercontent.com/mholt/PapaParse/master/papaparse.js"></script> 
     <title>READ CSV</title>
     <input type="file" id="upload-csv" accept=".csv"></input>
     <button id="btn-upload-csv">Read CSV</button>
-    <table id="tbl-data">
-    <script type=""text/javascript" src="https://raw.githubusercontent.com/mholt/PapaParse/master/papaparse.js"></script>    
-    </table>
+    <table id="tbl-data"></table>
+	<script type="text/javascript">
+    let btn_upload = document.getElementById('btn-upload-csv').addEventListener('click', () => {
+        Papa.parse(document.getElementById('upload-csv').files[0],{
+            download: true,
+            header: false,
+            complete: function(results){
+                console.log(results);
+            }
+        }
+        )
+    })
+</script>
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
