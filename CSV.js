@@ -5,7 +5,7 @@
     <canvas id="screen" width="640" height="640"></canvas>
         
     `;
-    customElements.define('com-sap-sample-helloworld1', class CSV_INPUT extends HTMLElement {
+    customElements.define('CSVINPUT', class CSVINPUT extends HTMLElement {
 
 
         constructor() {
