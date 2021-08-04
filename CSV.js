@@ -6,18 +6,6 @@
     <input type="file" id="upload-csv" accept=".csv"></input>
     <button id="btn-upload-csv">Read CSV</button>
     <table id="tbl-data"></table>
-	<script type="text/javascript">
-    let btn_upload = document.getElementById('btn-upload-csv').addEventListener('click', () => {
-        Papa.parse(document.getElementById('upload-csv').files[0],{
-            download: true,
-            header: false,
-            complete: function(results){
-                console.log(results);
-            }
-        }
-        )
-    })
-</script>
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
@@ -28,6 +16,16 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
+	    let btn_upload = document.getElementById('btn-upload-csv').addEventListener('click', () => {
+            Papa.parse(document.getElementById('upload-csv').files[0],{
+            download: true,
+            header: false,
+            complete: function(results){
+                console.log(results);
+            }
+        }
+        )
+    })
 
         }
 
