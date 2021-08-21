@@ -16,8 +16,8 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-	    let btn_upload = document.getElementById('btn-upload-csv').addEventListener('click', () => { console.log("CLICK")};
-            /*Papa.parse(document.getElementById('upload-csv').files[0],{
+	    let btn_upload = document.getElementById('btn-upload-csv').addEventListener('click', () => {
+            Papa.parse(document.getElementById('upload-csv').files[0],{
             download: true,
             header: false,
             complete: function(results){
@@ -25,8 +25,8 @@
             }
         }
         )
-    })*/
-
+    })
+        this._shadowRoot.appendChild(let_upload);
         }
 
         //Fired when the widget is added to the html DOM of the page
