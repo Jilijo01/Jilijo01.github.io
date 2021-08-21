@@ -26,7 +26,6 @@
         }
         )
     })
-        this._shadowRoot.appendChild(let_upload);
         }
 
         //Fired when the widget is added to the html DOM of the page
