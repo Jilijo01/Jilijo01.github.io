@@ -16,8 +16,8 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            const myForm = document.getElementById("myForm");
-            const csvFile = document.getElementById("csvFile");
+            const myForm = this._shadowRoot.getElementById("myForm");
+            const csvFile = this._shadowRoot.getElementById("csvFile");
 
             myForm.addEventListener("submit", function (e) {
               e.preventDefault();
