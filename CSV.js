@@ -1,7 +1,7 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-    <script type=""text/javascript" src="https://raw.githubusercontent.com/mholt/PapaParse/master/papaparse.js"></script> 
+    <script type="text/javascript" src="https://raw.githubusercontent.com/mholt/PapaParse/master/papaparse.js"></script> 
     <title>READ CSV</title>
     <input type="file" id="upload-csv" accept=".csv"></input>
     <button id="btn-upload-csv">Read CSV</button>
