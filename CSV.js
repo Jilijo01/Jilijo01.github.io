@@ -1,11 +1,11 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-    <script type="text/javascript" src="papaparse.min.js"></script> 
-    <title>READ CSV</title>
-    <input type="file" id="upload-csv" accept=".csv"></input>
-    <button id="btn-upload-csv">Read CSV</button>
-    <table id="tbl-data"></table>
+    <form id="myForm">
+    <input type="file" id="csvFile" accept=".csv" />
+    <br />
+    <input type="submit" value="Submit" />
+    </form>
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
@@ -16,6 +16,15 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
+
+            const myForm = this._shadowRoot.getElementById("myForm");
+            const csvFile = this._shadowRoot.getElementById("csvFile");
+          
+            myForm.addEventListener("submit", function (e) {
+              e.preventDefault();
+              console.log("Form submitted");
+            });
+
             function Upload() {
                 var fileUpload = this._shadowRoot.getElementById("fileUpload");
                 var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
