@@ -91,8 +91,7 @@
                 reader.onload = function (e) {
                   const text = e.target.result;
                   const data = csvToArray(text);
-                  //document.write(JSON.stringify(data));
-                  console.log(data)
+                  document.write(JSON.stringify(data));
                 };
                 
                 reader.readAsText(input);
@@ -135,6 +134,12 @@
         
         }
         */
+
+        // Getters and setters
+
+        get PlanningData() {
+            return data;
+        }
 
         redraw() { }
 
