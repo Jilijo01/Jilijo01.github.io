@@ -88,13 +88,13 @@
                 const input = csvFile.files[0];
                 const reader = new FileReader();
           
-                console.log(reader.onload = function (e) {
+                reader.onload = function (e) {
                   const text = e.target.result;
                   const data = csvToArray(text);
                   document.write(JSON.stringify(data));
                 };
                 
-                reader.readAsText(input));
+                reader.readAsText(input);
               });
         }
 
