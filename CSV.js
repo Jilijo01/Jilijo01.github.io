@@ -91,7 +91,8 @@
                 reader.onload = function (e) {
                   const text = e.target.result;
                   const data = csvToArray(text);
-                  document.write(JSON.stringify(data));
+                  //document.write(JSON.stringify(data));
+                  console.log(data)
                 };
                 
                 reader.readAsText(input);
