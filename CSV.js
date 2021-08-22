@@ -90,7 +90,7 @@
                 reader.onload = function (e) {
                   const text = e.target.result;
                   const data = csvToArray(text);
-                  document.write(JSON.stringify(data));
+                  console.log(document.write(JSON.stringify(data)));
                 };
                 
                 reader.readAsText(input);
