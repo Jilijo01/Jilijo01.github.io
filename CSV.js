@@ -138,7 +138,7 @@
         // Getters and setters
 
         get PlanningData() {
-            return this.data;
+            return data;
         }
 
         redraw() { }
