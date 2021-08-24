@@ -99,8 +99,6 @@
                 
                 reader.readAsText(input);
               });
-            //this._shadowRoot.getElementById("data").textContent += data2;
-            console.log(this.contentVar);
         }
 
         //Fired when the widget is added to the html DOM of the page
@@ -143,7 +141,7 @@
         // Getters and setters
 
         get data() {
-            return this._data;
+            return this.contentVar;
         }
 
         redraw() { }
