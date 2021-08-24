@@ -17,7 +17,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this._data = ['rstConnection'];
+            var data = [];
             
 
             const myForm = this._shadowRoot.getElementById("myForm");
@@ -95,7 +95,7 @@
                   const text = e.target.result;
                   var data2 = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                 
+                 data = data2;
                 };
                 
                 reader.readAsText(input);
