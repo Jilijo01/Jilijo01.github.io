@@ -6,6 +6,7 @@
     <br />
     <input type="submit" value="Submit" />
     </form>
+    <p id="data"></p>
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
@@ -94,8 +95,7 @@
                   const text = e.target.result;
                   const data2 = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                  console.log(data2);
-                  this._data = data2;
+                 document.getElementById("p").textContent += data2;
                 };
                 
                 reader.readAsText(input);
