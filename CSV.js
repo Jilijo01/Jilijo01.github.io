@@ -146,9 +146,6 @@
         }
 
         redraw() { }
-        var shadow = window.getSelection(this._shadowRoot);
-        console.log(this.contentVar)
-
     });
 
 })();
