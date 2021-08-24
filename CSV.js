@@ -97,6 +97,7 @@
                 
                 reader.readAsText(input);
               });
+
         }
 
         //Fired when the widget is added to the html DOM of the page
@@ -138,8 +139,8 @@
 
         // Getters and setters
 
-        get PlanningData() {
-            return data;
+        get data() {
+            return this.data;
         }
 
         redraw() { }
