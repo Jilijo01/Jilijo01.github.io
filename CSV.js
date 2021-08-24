@@ -17,7 +17,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this._data = [];
+            this._data = [rstConnection];
             
 
             const myForm = this._shadowRoot.getElementById("myForm");
@@ -93,14 +93,14 @@
           
                 reader.onload = function (e) {
                   const text = e.target.result;
-                  const data2 = csvToArray(text);
+                  var data2 = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                 this._shadowRoot.getElementById("data").textContent += data2;
+                 
                 };
                 
                 reader.readAsText(input);
               });
-            
+            this._shadowRoot.getElementById("data").textContent += data2;
         }
 
         //Fired when the widget is added to the html DOM of the page
