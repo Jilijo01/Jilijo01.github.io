@@ -16,7 +16,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            var data = [];
+            this._data = [];
             
 
             const myForm = this._shadowRoot.getElementById("myForm");
@@ -95,12 +95,12 @@
                   const data2 = csvToArray(text);
                   //document.write(JSON.stringify(data));
                   console.log(data2);
-                  data = data2;
+                 
                 };
                 
                 reader.readAsText(input);
               });
-
+            this._data = data2;
         }
 
         //Fired when the widget is added to the html DOM of the page
@@ -143,7 +143,7 @@
         // Getters and setters
 
         get data() {
-            console.log(data);
+            console.log(this._data);
         }
 
         redraw() { }
