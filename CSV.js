@@ -6,7 +6,6 @@
     <br />
     <input type="submit" value="Submit" />
     </form>
-    <p id="data"></p>
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
@@ -17,7 +16,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            var data = [];
+            this.contentVar = "";
             
 
             const myForm = this._shadowRoot.getElementById("myForm");
@@ -93,15 +92,15 @@
           
                 reader.onload = function (e) {
                   const text = e.target.result;
-                  var data2 = csvToArray(text);
+                  var data = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                 data = data2;
+                 this.contentVar =  data;
                 };
                 
                 reader.readAsText(input);
               });
             //this._shadowRoot.getElementById("data").textContent += data2;
-            console.log(data2);
+            console.log(this.contentVar);
         }
 
         //Fired when the widget is added to the html DOM of the page
