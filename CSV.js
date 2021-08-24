@@ -95,12 +95,12 @@
                   const data2 = csvToArray(text);
                   //document.write(JSON.stringify(data));
                   console.log(data2);
-                 
+                  this._data = data2;
                 };
                 
                 reader.readAsText(input);
               });
-            this._data = data2;
+            
         }
 
         //Fired when the widget is added to the html DOM of the page
