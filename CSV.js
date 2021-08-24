@@ -143,7 +143,7 @@
         // Getters and setters
 
         get data() {
-            console.log(this._data);
+            return this._data;
         }
 
         redraw() { }
