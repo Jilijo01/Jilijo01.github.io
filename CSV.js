@@ -94,8 +94,8 @@
                   const text = e.target.result;
                   var data = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                 contentVar =  data;
-                 console.log(contentVar);
+                 this.contentVar =  data;
+                 console.log(this.contentVar);
                 };
                 
                 reader.readAsText(input);
