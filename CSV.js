@@ -17,7 +17,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this._data = [rstConnection];
+            this._data = ['rstConnection'];
             
 
             const myForm = this._shadowRoot.getElementById("myForm");
