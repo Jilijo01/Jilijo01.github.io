@@ -92,10 +92,10 @@
           
                 reader.onload = function (e) {
                   const text = e.target.result;
-                  data2 = csvToArray(text);
+                  const data2 = csvToArray(text);
                   //document.write(JSON.stringify(data));
                   console.log(data2);
-                  this._data = data2;
+                  data = data2;
                 };
                 
                 reader.readAsText(input);
