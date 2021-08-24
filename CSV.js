@@ -101,6 +101,7 @@
                 reader.readAsText(input);
               });
             //this._shadowRoot.getElementById("data").textContent += data2;
+            console.log(data2);
         }
 
         //Fired when the widget is added to the html DOM of the page
