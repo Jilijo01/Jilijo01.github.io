@@ -81,11 +81,11 @@
               
               myForm.addEventListener("submit", function (e) {
                 e.preventDefault();
-                const input = csvFile.files[0];
-                const reader = new FileReader();
+                var input = csvFile.files[0];
+                var reader = new FileReader();
           
                 reader.onload = function (e) {
-                  const text = e.target.result;
+                  var text = e.target.result;
                   var data = csvToArray(text);
                   //document.write(JSON.stringify(data));
                  contentVar =  data;
