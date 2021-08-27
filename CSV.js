@@ -16,7 +16,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            var  = [];
+            var contentVar = [];
             this._shadowRoot.appendChild(contentVar);
             
             const myForm = this._shadowRoot.getElementById("myForm");
