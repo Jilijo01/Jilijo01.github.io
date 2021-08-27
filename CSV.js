@@ -28,6 +28,7 @@
                 const input = csvFile.files[0];
                 const reader = new FileReader();
                 reader.onload = function (event) {
+                    const text = e.target.result;
                     reader.readAsText(input);
 
                   };
