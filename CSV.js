@@ -77,13 +77,9 @@
 
         // Getters and setters
         get data() {
-            return this.data;
-        }
-        
-        set data(value) {
-            this.data = value;
-        }
-        
+            return this.content;
+        }     
+       
         redraw() { }
     });
 
