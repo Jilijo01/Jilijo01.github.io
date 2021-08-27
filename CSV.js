@@ -80,10 +80,6 @@
             return this.data;
         }
         
-        set data(value) {
-        this.data = value;
-}
-
         redraw() { }
     });
 
