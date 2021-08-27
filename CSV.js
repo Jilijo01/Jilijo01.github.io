@@ -96,7 +96,7 @@
                  contentVar =  data;
                  console.log(contentVar);
                 };
-                
+                console.log(contentVar);
                 reader.readAsText(input);
               });
         }
