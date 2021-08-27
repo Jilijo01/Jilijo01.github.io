@@ -1,11 +1,7 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-    <form id="myForm">
-    <input type="file" id="csvFile" accept=".csv" />
-    <br />
-    <input type="submit" value="Submit" />
-    </form>
+    <input type="file" id="uploadfile" onChange="readImage(this)">
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
@@ -18,86 +14,6 @@
             this._firstConnection = false;
             this.contentVar = ["20","PS2","FS","200\r"];
             
-            const myForm = this._shadowRoot.getElementById("myForm");
-            const csvFile = this._shadowRoot.getElementById("csvFile");
-          
-           function Upload() {
-                var fileUpload = this._shadowRoot.getElementById("fileUpload");
-                var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
-                if (regex.test(fileUpload.value.toLowerCase())) {
-                    if (typeof (FileReader) != "undefined") {
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            var table = this._shadowRoot.createElement("table");
-                            var rows = e.target.result.split("\n");
-                            for (var i = 0; i < rows.length; i++) {
-                                var cells = rows[i].split(",");
-                                if (cells.length > 1) {
-                                    var row = table.insertRow(-1);
-                                    for (var j = 0; j < cells.length; j++) {
-                                        var cell = row.insertCell(-1);
-                                        cell.innerHTML = cells[j];
-                                    }
-                                }
-                            }
-                            var dvCSV = this._shadowRoot.getElementById("dvCSV");
-                            dvCSV.innerHTML = "";
-                            dvCSV.appendChild(table);
-                        }
-                        reader.readAsText(fileUpload.files[0]);
-                    } else {
-                        alert("This browser does not support HTML5.");
-                    }
-                } else {
-                    alert("Please upload a valid CSV file.");
-                }
-            }
-            function csvToArray(str, delimiter = ",") {
-                // slice from start of text to the first \n index
-                // use split to create an array from string by delimiter
-                const headers = str.slice(0, str.indexOf("\n")).split(delimiter);
-              
-                // slice from \n index + 1 to the end of the text
-                // use split to create an array of each csv value row
-                const rows = str.slice(str.indexOf("\n") + 1).split("\n");
-              
-                // Map the rows
-                // split values from each row into an array
-                // use headers.reduce to create an object
-                // object properties derived from headers:values
-                // the object passed as an element of the array
-                const arr = rows.map(function (row) {
-                  const values = row.split(delimiter);
-                  const el = headers.reduce(function (object, header, index) {
-                    object[header] = values[index];
-                    return object;
-                  }, {});
-                  return el;
-                });
-              
-                // return the array
-                return arr;
-              }
-              
-              myForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                var input = csvFile.files[0];
-                var reader = new FileReader();
-          
-                reader.onload = function (e) {
-                  var text = e.target.result;
-                  var data = csvToArray(text);
-                  //document.write(JSON.stringify(data));
-                 this.contentVar =  data;
-                 console.log('1');
-                 console.log(this.contentVar);
-
-                };
-                console.log('2');
-                this.contentVar =  data;
-                console.log(this.contentVar);
-                reader.readAsText(input);
-              });
         }
 
         //Fired when the widget is added to the html DOM of the page
