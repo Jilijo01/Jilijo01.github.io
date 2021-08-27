@@ -18,7 +18,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.data = "";
+            this.content = "";
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
 
@@ -28,14 +28,14 @@
                   const reader = new FileReader();
 
                   reader.onload = function (e) {
-                    this.data = e.target.result;
+                    this.content = e.target.result;
                     //document.write(text);
-                    console.log(this.data);
+                    console.log(this.content);
                   };
 
                   reader.readAsText(input);
                 });
-                console.log(data);
+                console.log(content);
         }
 
         //Fired when the widget is added to the html DOM of the page
@@ -78,6 +78,10 @@
         // Getters and setters
         get data() {
             return this.data;
+        }
+        
+        set data(value) {
+            this.data = value;
         }
         
         redraw() { }
