@@ -29,7 +29,7 @@
 
                   reader.onload = function (e) {
                     const text = e.target.result;
-                    document.write(text);
+                    //document.write(text);
                   };
 
                   reader.readAsText(input);
