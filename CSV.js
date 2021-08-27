@@ -18,7 +18,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            var data = "";
+            this.data = "";
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
 
@@ -28,9 +28,9 @@
                   const reader = new FileReader();
 
                   reader.onload = function (e) {
-                    data = e.target.result;
+                    this.data = e.target.result;
                     //document.write(text);
-                    console.log(data);
+                    console.log(this.data);
                   };
 
                   reader.readAsText(input);
@@ -77,7 +77,7 @@
 
         // Getters and setters
         get data() {
-            return this.contentVar;
+            return this.data;
         }
 
 
