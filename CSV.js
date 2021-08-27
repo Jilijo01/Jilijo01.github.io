@@ -91,6 +91,9 @@
                  this.contentVar =  data;
                  console.log('1');
                  console.log(this.contentVar);
+                     get data() {
+                        return this.contentVar;
+                     }
                 };
                 console.log('2');
                 console.log(this.contentVar);
@@ -137,9 +140,7 @@
 
         // Getters and setters
 
-        get data() {
-            return this.contentVar;
-        }
+        
 
         redraw() { }
     });
