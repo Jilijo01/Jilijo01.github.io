@@ -30,6 +30,7 @@
                   reader.onload = function (e) {
                     const text = e.target.result;
                     //document.write(text);
+                    console.log(text);
                   };
 
                   reader.readAsText(input);
