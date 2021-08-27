@@ -88,12 +88,12 @@
                   var text = e.target.result;
                   var data = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                 contentVar =  data;
+                 this.contentVar =  data;
                  console.log('1');
-                 console.log(contentVar);
+                 console.log(this.contentVar);
                 };
                 console.log('2');
-                console.log(contentVar);
+                console.log(this.contentVar);
                 reader.readAsText(input);
               });
         }
