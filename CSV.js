@@ -16,7 +16,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.contentVar = [{Rim: "20", Bcat: "PS2", Brand: "FS", "Value ": "200\r"}];
+            this.contentVar = ["20","PS2","FS","200\r"];
             
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
