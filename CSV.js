@@ -25,6 +25,11 @@
             myForm.addEventListener("submit", function (e) {
                 e.preventDefault();
                 console.log("Form submitted");
+                const input = csvFile.files[0];
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    console.log(event.target.result); // the CSV content as string
+                  };
               });
 
         }
