@@ -12,8 +12,37 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.contentVar = ["20","PS2","FS","200\r"];
-            
+            this.contentVar = ["20", "PS2", "FS", "200\r"];
+
+            var obj_csv = {
+                size: 0,
+                dataFile: []
+            };
+
+            function readImage(input) {
+                console.log(input)
+                if (input.files && input.files[0]) {
+                    let reader = new FileReader();
+                    reader.readAsBinaryString(input.files[0]);
+                    reader.onload = function (e) {
+                        console.log(e);
+                        obj_csv.size = e.total;
+                        obj_csv.dataFile = e.target.result
+                        console.log(obj_csv.dataFile)
+                        parseData(obj_csv.dataFile)
+
+                    }
+                }
+            }
+
+            function parseData(data) {
+                let csvData = [];
+                let lbreak = data.split("\n");
+                lbreak.forEach(res => {
+                    csvData.push(res.split(","));
+                });
+                console.table(csvData);
+            }
         }
 
         //Fired when the widget is added to the html DOM of the page
@@ -56,8 +85,8 @@
         // Getters and setters
         get data() {
             return this.contentVar;
-         }
-        
+        }
+
 
         redraw() { }
     });
