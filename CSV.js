@@ -7,13 +7,15 @@
 
 
         constructor() {
-            super();
-            this._shadowRoot = this.attachShadow({ mode: "open" });
+			super(); 
+			this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.content = "TEST!@#";
-           
-        }
+            this._tagContainer;
+            this._tagType = "h1";
+            this.content = "Hello World";
+		}
+          
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback() {
@@ -58,7 +60,15 @@
         }     
        
         redraw() { 
-        this.content = "NOPE"
+                    if (this._tagContainer){
+                this._tagContainer.parentNode.removeChild(this._tagContainer);
+            }
+
+            var shadow = window.getSelection(this._shadowRoot);
+            this._tagContainer = document.createElement(this._tagType);
+            var theText = document.createTextNode(this.content);    
+            this._tagContainer.appendChild(theText); 
+            this._shadowRoot.appendChild(this._tagContainer);
         }
     });
 
