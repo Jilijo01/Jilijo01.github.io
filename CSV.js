@@ -138,7 +138,7 @@
         // Getters and setters
 
         get data() {
-            return this.contentVar;
+            return contentVar;
         }
 
         redraw() { }
