@@ -35,7 +35,7 @@
 
                   reader.readAsText(input);
                 });
-                console.log(content);
+                console.log(this.content);
         }
 
         //Fired when the widget is added to the html DOM of the page
