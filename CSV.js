@@ -17,7 +17,6 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
             var contentVar = [];
-            this._shadowRoot.appendChild(contentVar);
             
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
