@@ -57,7 +57,10 @@
             return this.content;
         }     
        
-        redraw() { }
+        redraw() { 
+        var theText = = document.createTextNode(this.content);
+        this._shadowroot.appendChild(theText);
+        }
     });
 
 })();
