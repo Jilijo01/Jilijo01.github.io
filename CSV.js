@@ -22,17 +22,18 @@
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
 
-            myForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                console.log("Form submitted");
-                const input = csvFile.files[0];
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const text = e.target.result;
-                    reader.readAsText(input);
+               myForm.addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  const input = csvFile.files[0];
+                  const reader = new FileReader();
 
+                  reader.onload = function (e) {
+                    const text = e.target.result;
+                    document.write(text);
                   };
-              });
+
+                  reader.readAsText(input);
+                });
 
         }
 
