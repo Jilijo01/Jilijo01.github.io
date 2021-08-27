@@ -1,13 +1,6 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-    <body>
-    <form id="myForm">
-        <input type="file" id="csvFile" accept=".csv" />
-        <br />
-        <input type="submit" value="Submit" />
-    </form>
-    </body>
     `;
 
     customElements.define('com-sap-sample-helloworld2', class HelloWorld1 extends HTMLElement {
@@ -18,24 +11,8 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.content = "";
-            const myForm = this._shadowRoot.getElementById("myForm");
-            const csvFile = this._shadowRoot.getElementById("csvFile");
-
-               myForm.addEventListener("submit", function (e) {
-                  e.preventDefault();
-                  const input = csvFile.files[0];
-                  const reader = new FileReader();
-
-                  reader.onload = function (e) {
-                    this.content = e.target.result;
-                    //document.write(text);
-                    console.log(this.content);
-                  };
-
-                  reader.readAsText(input);
-                });
-                console.log(this.content);
+            this.content = "TEST!@#";
+           
         }
 
         //Fired when the widget is added to the html DOM of the page
