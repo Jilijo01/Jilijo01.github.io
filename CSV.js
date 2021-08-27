@@ -21,12 +21,7 @@
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
           
-            myForm.addEventListener("submit", function (e) {
-              e.preventDefault();
-              console.log("Form submitted");
-            });
-
-            function Upload() {
+           function Upload() {
                 var fileUpload = this._shadowRoot.getElementById("fileUpload");
                 var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
                 if (regex.test(fileUpload.value.toLowerCase())) {
