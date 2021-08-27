@@ -16,9 +16,9 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-            this.contentVar = ["test"];
-            console.log(this.contentVar);
-
+            var  = [];
+            this._shadowRoot.appendChild(contentVar);
+            
             const myForm = this._shadowRoot.getElementById("myForm");
             const csvFile = this._shadowRoot.getElementById("csvFile");
           
@@ -94,10 +94,10 @@
                   const text = e.target.result;
                   var data = csvToArray(text);
                   //document.write(JSON.stringify(data));
-                 this.contentVar =  data;
+                 contentVar =  data;
                  
                 };
-                console.log(this.contentVar);
+                console.log(contentVar);
                 reader.readAsText(input);
               });
         }
