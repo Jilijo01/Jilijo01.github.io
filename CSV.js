@@ -94,9 +94,9 @@
                   var data = csvToArray(text);
                   //document.write(JSON.stringify(data));
                  contentVar =  data;
-                 
+                 console.log(contentVar);
                 };
-                console.log(contentVar);
+                
                 reader.readAsText(input);
               });
         }
