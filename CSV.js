@@ -13,7 +13,7 @@
             this._firstConnection = false;
             this._tagContainer;
             this._tagType = "h1";
-            this._tagText = "Hello World";
+            this._tagText = "Hello World CONSTRUCTOR";
 
             //Adding event handler for click events
 			this.addEventListener("click", event => {
@@ -26,7 +26,7 @@
         connectedCallback(){
             this._firstConnection = true;
             this.redraw(); 
-	    this._tagText = "Hello World";
+	    this._tagText = "Hello World CON CALLB";
         }
 
          //Fired when the widget is removed from the html DOM of the page (e.g. by hide)
