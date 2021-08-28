@@ -36,7 +36,7 @@
 
          //When the custom widget is updated, the Custom Widget SDK framework executes this function first
 		onCustomWidgetBeforeUpdate(oChangedProperties) {
-
+		console.log('ochngdprop');
 		}
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
