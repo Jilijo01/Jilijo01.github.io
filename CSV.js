@@ -65,7 +65,7 @@
         //Getters and Setters
         get widgetText() {
             //return this._tagText;
-	    return document.getElementById("JILIJO");
+	    return this._shadowRoot.getElementById("JILIJO");
         }
 
         set widgetText(value) {
