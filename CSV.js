@@ -26,7 +26,7 @@
         connectedCallback(){
             this._firstConnection = true;
             this.redraw(); 
-	    this._tagText = "Hello World CON CALLB";
+	    //this._tagText = "Hello World CON CALLB";
         }
 
          //Fired when the widget is removed from the html DOM of the page (e.g. by hide)
@@ -36,7 +36,7 @@
 
          //When the custom widget is updated, the Custom Widget SDK framework executes this function first
 		onCustomWidgetBeforeUpdate(oChangedProperties) {
-		this._tagText = "Hello World CON CALLB";
+		//this._tagText = "Hello World CON CALLB";
 		}
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
