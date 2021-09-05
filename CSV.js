@@ -64,7 +64,7 @@
 
         //Getters and Setters
         get widgetText() {
-            return this._tagType;
+            return this._tagText;
         }
 
         set widgetText(value) {
