@@ -26,6 +26,8 @@
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
             this._firstConnection = true;
+            localStorage.setItem('name','Chris');
+            let myName = localStorage.getItem('name');
             this.redraw(); 
 	    //this._tagText = "Hello World CON CALLB";
         }
@@ -65,7 +67,8 @@
         //Getters and Setters
         get widgetText() {
             //return this._tagText;
-	    return this._shadowRoot.innerHTML;
+	    return myName
+        
         }
 
         set widgetText(value) {
