@@ -13,6 +13,9 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
+            var script = document.createElement('script');
+            script.setAttribute('src', '/socket.io/socket.io.js');
+            this._shadowRoot.appendChild(script);
             socket = io("http://localhost:3000");
             socket.on('connect', function () {
                 console.log("socket connected");
